@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c2lrm2lctye8q" path="res://scripts/player.gd" id="1_v6fml"]
 [ext_resource type="Texture2D" uid="uid://bettpx3vy2nm4" path="res://assets/art/icon.svg" id="2_3li8b"]
 [ext_resource type="PackedScene" uid="uid://cxidonmrthcrg" path="res://scenes/dialogue_overlay.tscn" id="3_3li8b"]
+[ext_resource type="PackedScene" uid="uid://cixuu1umjbp3k" path="res://scenes/dynamic_mask.tscn" id="3_mdl7e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 45.0
@@ -16,6 +17,9 @@ script = ExtResource("1_v6fml")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=951768103]
 texture = ExtResource("2_3li8b")
+
+[node name="DynamicMask" parent="." unique_id=67157889 instance=ExtResource("3_mdl7e")]
+position = Vector2(0, -10)
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1089800866]
 shape = SubResource("CapsuleShape2D_g4v7s")

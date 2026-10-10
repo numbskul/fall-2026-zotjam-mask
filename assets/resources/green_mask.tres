@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MaskResource" format=3 uid="uid://cdb2xy2e2qx4w"]
+
+[ext_resource type="Script" uid="uid://c60jsavdishy3" path="res://assets/resources/resource_scripts/mask_resource.gd" id="1_kotte"]
+
+[resource]
+script = ExtResource("1_kotte")
+emblem_shape = 2
+emblem_color = 3
+eye_shape = 1
+eye_color = 3
+mouth_shape = 1
+mouth_color = 3
+metadata/_custom_type_script = "uid://c60jsavdishy3"
