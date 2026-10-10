@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://htg38g8xigx7" path="res://scripts/dynamic_mask.gd" id="2_iuf2e"]
 
 [node name="DynamicMask" type="AnimatedSprite2D" unique_id=67157889]
+texture_filter = 3
+scale = Vector2(0.25, 0.25)
 sprite_frames = ExtResource("1_q3t5b")
 animation = &"Mask"
 script = ExtResource("2_iuf2e")

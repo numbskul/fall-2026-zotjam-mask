@@ -1,66 +1,63 @@
 [gd_scene format=3 uid="uid://cok8umbyeckie"]
 
 [ext_resource type="PackedScene" uid="uid://b8g6m4147uhro" path="res://scenes/Player.tscn" id="1_elqb8"]
-[ext_resource type="Texture2D" uid="uid://bettpx3vy2nm4" path="res://assets/art/icon.svg" id="1_rvslj"]
+[ext_resource type="Texture2D" uid="uid://dwmopjv77t5mp" path="res://assets/art/room_size.png" id="1_vcsgt"]
 [ext_resource type="Script" uid="uid://dax666j42iw2l" path="res://scripts/camera.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://yt4osn3uaebq" path="res://scripts/room.gd" id="5_c01mt"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi4cx"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kur6e"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4udn"]
+size = Vector2(320, 180)
 
 [node name="Main" type="Node" unique_id=1482057672]
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=249117252]
-position = Vector2(-1.9999924, 8.000008)
-scale = Vector2(34.39453, 15.0546875)
-texture = ExtResource("1_rvslj")
-
-[node name="CharacterBody2D" parent="." unique_id=1861419166 instance=ExtResource("1_elqb8")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
-zoom = Vector2(0.4, 0.4)
-script = ExtResource("4_vcsgt")
-target = NodePath("../CharacterBody2D")
 
 [node name="Room1" type="Area2D" parent="." unique_id=562013635 node_paths=PackedStringArray("camera_controller", "lock_point")]
 script = ExtResource("5_c01mt")
 camera_controller = NodePath("../Camera2D")
 lock_point = NodePath("Lockpoint")
 
+[node name="Sprite2D" type="Sprite2D" parent="Room1" unique_id=249117252]
+texture = ExtResource("1_vcsgt")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Room1" unique_id=1748131171]
-scale = Vector2(70, 70)
 shape = SubResource("RectangleShape2D_gi4cx")
 
 [node name="Lockpoint" type="Node2D" parent="Room1" unique_id=81750511]
 
-[node name="Room2" type="Area2D" parent="." unique_id=371349639 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(1400, 0)
+[node name="Room2" type="Area2D" parent="." unique_id=80302181 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(320, 0)
 script = ExtResource("5_c01mt")
 camera_controller = NodePath("../Camera2D")
 lock_point = NodePath("Lockpoint")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2" unique_id=62959050]
-scale = Vector2(70, 70)
-shape = SubResource("RectangleShape2D_kur6e")
+[node name="Sprite2D" type="Sprite2D" parent="Room2" unique_id=936179183]
+texture = ExtResource("1_vcsgt")
 
-[node name="Lockpoint" type="Node2D" parent="Room2" unique_id=1414182789]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2" unique_id=1038123210]
+shape = SubResource("RectangleShape2D_gi4cx")
 
-[node name="Room3" type="Area2D" parent="." unique_id=1726882752 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(-1400, 0)
+[node name="Lockpoint" type="Node2D" parent="Room2" unique_id=372970660]
+
+[node name="Room3" type="Area2D" parent="." unique_id=1953676981 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(-320, 0)
 script = ExtResource("5_c01mt")
 camera_controller = NodePath("../Camera2D")
 lock_point = NodePath("Lockpoint")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3" unique_id=775479563]
-scale = Vector2(70, 70)
-shape = SubResource("RectangleShape2D_v4udn")
+[node name="Sprite2D" type="Sprite2D" parent="Room3" unique_id=1623591099]
+texture = ExtResource("1_vcsgt")
 
-[node name="Lockpoint" type="Node2D" parent="Room3" unique_id=1194402368]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3" unique_id=602740638]
+shape = SubResource("RectangleShape2D_gi4cx")
+
+[node name="Lockpoint" type="Node2D" parent="Room3" unique_id=480228777]
+
+[node name="CharacterBody2D" parent="." unique_id=1861419166 instance=ExtResource("1_elqb8")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
+script = ExtResource("4_vcsgt")
+target = NodePath("../CharacterBody2D")
 
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
-position = Vector2(-218, -150)
+position = Vector2(-122, -53)
 dialog_id = "1_start_here"

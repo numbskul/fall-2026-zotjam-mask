@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var dialogue_overlay: Control = $DialogueOverlay
 @onready var player_interaction_range: Area2D = $PlayerInteractionRange
-@export var movement_speed = 300.0
+@export var movement_speed = 96.0
 
 enum FACINGS {UP, DOWN, LEFT, RIGHT}
 enum STATES {IDLE, MOVING, TALKING}
