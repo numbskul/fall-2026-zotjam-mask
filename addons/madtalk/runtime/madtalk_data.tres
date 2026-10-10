@@ -32,7 +32,7 @@ connected_to_id = 6
 
 [sub_resource type="Resource" id="2"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-20, 120)
+position = Vector2(20, 280)
 items = [SubResource("1"), SubResource("4")]
 options = [SubResource("5"), SubResource("6")]
 

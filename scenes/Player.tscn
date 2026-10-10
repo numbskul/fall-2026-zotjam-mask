@@ -11,7 +11,7 @@ height = 150.0
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_g4v7s"]
 points = PackedVector2Array(200, -80, 200, 80, 0, 0)
 
-[node name="PlayerController" type="CharacterBody2D" unique_id=1861419166]
+[node name="PlayerController" type="CharacterBody2D" unique_id=1861419166 groups=["player"]]
 script = ExtResource("1_v6fml")
 
 [node name="PlayerSprite" type="Sprite2D" parent="." unique_id=951768103]
@@ -21,6 +21,7 @@ texture = ExtResource("2_3li8b")
 shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1948885877]
+enabled = false
 
 [node name="PlayerInteractionRange" type="Area2D" parent="." unique_id=1458584272]
 
