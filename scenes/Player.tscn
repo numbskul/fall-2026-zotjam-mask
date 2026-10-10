@@ -20,9 +20,6 @@ texture = ExtResource("2_3li8b")
 [node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=1089800866]
 shape = SubResource("CapsuleShape2D_g4v7s")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1948885877]
-enabled = false
-
 [node name="PlayerInteractionRange" type="Area2D" parent="." unique_id=1458584272]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionRange" unique_id=932928415]
