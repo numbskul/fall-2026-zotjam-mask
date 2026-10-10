@@ -52,7 +52,8 @@ shape = SubResource("RectangleShape2D_gi4cx")
 
 [node name="Lockpoint" type="Node2D" parent="Room3" unique_id=480228777]
 
-[node name="CharacterBody2D" parent="." unique_id=1861419166 instance=ExtResource("1_elqb8")]
+[node name="CharacterBody2D" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
+timer = NodePath("../Timer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
 script = ExtResource("4_vcsgt")
@@ -60,4 +61,11 @@ target = NodePath("../CharacterBody2D")
 
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
 position = Vector2(-122, -53)
-dialog_id = "1_start_here"
+dialog_id = "testing_sheet_1"
+
+[node name="Timer" type="Timer" parent="." unique_id=344907707]
+wait_time = 120.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_game_timer_timeout"]

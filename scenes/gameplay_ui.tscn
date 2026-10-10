@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://uprcvuc7ppdn"]
+
+[ext_resource type="PackedScene" uid="uid://cixuu1umjbp3k" path="res://scenes/dynamic_mask.tscn" id="1_nm0ya"]
+[ext_resource type="Script" uid="uid://c7a32rtqhkhs8" path="res://scenes/gameplay_ui.gd" id="1_wf0n7"]
+
+[node name="Gameplay UI" type="Control" unique_id=360624764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wf0n7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=826418288]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=148085119]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Control" type="Control" parent="CanvasLayer/MarginContainer" unique_id=258414811]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="DynamicMask" parent="CanvasLayer/MarginContainer/Control" unique_id=67157889 instance=ExtResource("1_nm0ya")]
+scale = Vector2(0.5, 0.5)
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=2102812943]
+offset_right = 52.0
+offset_bottom = 43.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer2" unique_id=298093454]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "2:00"
+horizontal_alignment = 1

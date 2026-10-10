@@ -87,7 +87,7 @@ continue_port_index = 0
 script = ExtResource("5_vkpn8")
 sheet_id = "1_start_here"
 sheet_description = "Demonstration sheet. You can delete this in your game, or repurpose it."
-next_sequence_id = 9
+next_sequence_id = 10
 nodes = [SubResource("2"), SubResource("Resource_ixt6j"), SubResource("Resource_j2kw6")]
 
 [sub_resource type="Resource" id="Resource_vx7w3"]
@@ -441,6 +441,48 @@ sheet_id = "new_sheet_1"
 next_sequence_id = 1
 nodes = [SubResource("kur6e")]
 
+[sub_resource type="Resource" id="Resource_hkg3h"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 2
+condition_type = 4
+condition_values = ["mouth_shape", "1"]
+
+[sub_resource type="Resource" id="Resource_uwwod"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 2
+condition_type = 4
+condition_values = ["mouth_color", "2"]
+
+[sub_resource type="Resource" id="mjnvi"]
+script = ExtResource("2_48vp3")
+message_text = "Wow! You look.. both happy and sad? Good job!"
+
+[sub_resource type="Resource" id="gi4cx"]
+script = ExtResource("4_f2ijm")
+position = Vector2(320, 260)
+items = [SubResource("Resource_hkg3h"), SubResource("Resource_uwwod"), SubResource("mjnvi")]
+continue_port_index = 2
+
+[sub_resource type="Resource" id="Resource_wspnu"]
+script = ExtResource("2_48vp3")
+message_text = "Hey! I'm  a testing NPC. Come back to me when you have a blue smile!"
+
+[sub_resource type="Resource" id="Resource_0mplr"]
+script = ExtResource("4_f2ijm")
+sequence_id = 2
+position = Vector2(800, 320)
+items = [SubResource("Resource_wspnu")]
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_6yf53"]
+script = ExtResource("5_vkpn8")
+sheet_id = "testing_sheet_1"
+sheet_description = "Testing how dialogue can change based on player vars"
+next_sequence_id = 3
+nodes = [SubResource("gi4cx"), SubResource("Resource_0mplr")]
+
 [resource]
 script = ExtResource("1_giduu")
 sheets = {
@@ -449,5 +491,6 @@ sheets = {
 "external_menu": SubResource("15"),
 "localized": SubResource("Resource_cvf4j"),
 "minimum_menu": SubResource("Resource_s3y14"),
-"new_sheet_1": SubResource("Resource_mjnvi")
+"new_sheet_1": SubResource("Resource_mjnvi"),
+"testing_sheet_1": SubResource("Resource_6yf53")
 }
