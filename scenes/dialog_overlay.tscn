@@ -1,20 +1,20 @@
 [gd_scene format=3 uid="uid://cxidonmrthcrg"]
 
-[ext_resource type="Script" uid="uid://5oaqvqdovm4g" path="res://scripts/dialogue_overlay.gd" id="1_0pfuj"]
-[ext_resource type="Texture2D" uid="uid://bettpx3vy2nm4" path="res://assets/art/icon.svg" id="1_t5kwb"]
-[ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_dh0qe"]
+[ext_resource type="Script" uid="uid://5oaqvqdovm4g" path="res://scripts/dialogue_overlay.gd" id="1_djv66"]
+[ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_utxks"]
+[ext_resource type="Texture2D" uid="uid://bettpx3vy2nm4" path="res://assets/art/icon.svg" id="3_28p24"]
 
-[node name="DialogueOverlay" type="Control" unique_id=1751266484]
+[node name="DialogOverlay" type="Control" unique_id=1751266484]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0pfuj")
+script = ExtResource("1_djv66")
 
 [node name="MadTalkRuntime" type="Node" parent="." unique_id=2127828774]
-script = ExtResource("2_dh0qe")
+script = ExtResource("2_utxks")
 DialogMainControl = NodePath("../CanvasLayer/MarginContainer")
 DialogMessageBox = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/TextMargins/TextBoxPanel")
 DialogMessageLabel = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/TextMargins/TextBoxPanel/RichTextLabel")
@@ -43,7 +43,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins" unique_id=953960388]
 layout_mode = 2
-texture = ExtResource("1_t5kwb")
+texture = ExtResource("3_28p24")
 expand_mode = 2
 
 [node name="DialogueMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox" unique_id=1285872903]
@@ -67,7 +67,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-fit_content = true
+theme_override_font_sizes/normal_font_size = 5
 
 [node name="ButtonMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer" unique_id=1135838135]
 layout_mode = 2
@@ -77,6 +77,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel" unique_id=1410580881]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -2,12 +2,19 @@ extends CharacterBody2D
 
 @onready var dialogue_overlay: Control = $DialogueOverlay
 @onready var player_interaction_range: Area2D = $PlayerInteractionRange
-@export var movement_speed = 300.0
+@export var movement_speed = 96.0
 
 enum FACINGS {UP, DOWN, LEFT, RIGHT}
 enum STATES {IDLE, MOVING, TALKING}
 var current_facing := FACINGS.DOWN
 var current_state := STATES.IDLE
+
+const GREEN_MASK = preload("uid://cdb2xy2e2qx4w")
+var mask : MaskResource = MaskResource.new()
+@onready var dynamic_mask: AnimatedSprite2D = $DynamicMask
+
+func _ready() -> void:
+	dynamic_mask.set_mask(mask)
 
 func _physics_process(delta: float) -> void:
 	var direction : Vector2 = get_movement_input()
@@ -50,6 +57,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if id != "":
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
+			dynamic_mask.set_mask(GREEN_MASK)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and current_state == STATES.TALKING:

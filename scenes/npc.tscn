@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dh3si4sukmaeu" path="res://scripts/npc.gd" id="1_nh2m4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
-radius = 100.0
+radius = 16.0
 
 [node name="NPC" type="Node2D" unique_id=2068594920]
 script = ExtResource("1_nh2m4")

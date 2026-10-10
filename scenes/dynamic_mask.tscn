@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cixuu1umjbp3k"]
+
+[ext_resource type="SpriteFrames" uid="uid://6ga3lcnbix7o" path="res://assets/art/dynamic_mask_spriteframes.tres" id="1_q3t5b"]
+[ext_resource type="Script" uid="uid://htg38g8xigx7" path="res://scripts/dynamic_mask.gd" id="2_iuf2e"]
+
+[node name="DynamicMask" type="AnimatedSprite2D" unique_id=67157889]
+texture_filter = 3
+scale = Vector2(0.25, 0.25)
+sprite_frames = ExtResource("1_q3t5b")
+animation = &"Mask"
+script = ExtResource("2_iuf2e")
+
+[node name="Emblem" type="AnimatedSprite2D" parent="." unique_id=666186801]
+modulate = Color(0, 0, 0, 1)
+sprite_frames = ExtResource("1_q3t5b")
+animation = &"Emblem"
+frame = 1
+
+[node name="Eyes" type="AnimatedSprite2D" parent="." unique_id=1523313062]
+modulate = Color(0, 0, 0, 1)
+sprite_frames = ExtResource("1_q3t5b")
+animation = &"Eyes"
+
+[node name="Mouth" type="AnimatedSprite2D" parent="." unique_id=1165705945]
+modulate = Color(0, 0, 0, 1)
+sprite_frames = ExtResource("1_q3t5b")
+animation = &"Mouth"
