@@ -98,9 +98,6 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and current_state == STATES.TALKING:
 		dialogue_overlay.continue_dialog()
 
-func _on_dialogue_overlay_dialog_finished() -> void:
-	current_state = STATES.IDLE
-
 func _on_game_timer_timeout() -> void:
 	pass
 
@@ -108,13 +105,13 @@ func _on_done_editing() -> void:
 	current_state = STATES.IDLE
 	gameplay_ui.set_mask_visible(true)
 
-
 func restart_loop():
 	restart.emit()
-	
-
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "restart_loop_fade_out":
 		dialogue_overlay.abort()
 		current_state = STATES.IDLE
+
+func _on_dialogue_overlay_dialog_finished(sheet_name: Variant, sequence_id: Variant) -> void:
+	current_state = STATES.IDLE
