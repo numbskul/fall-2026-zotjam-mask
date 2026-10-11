@@ -13,8 +13,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if timer.time_left < 15:
 		screenshake(remap(timer.time_left, 15, 0, 0, 1))
-	if timer.time_left < 2:
-		fade_to_white(remap(timer.time_left, 2, 0, 0, 1))
+	if timer.time_left < 5:
+		fade_to_white(remap(timer.time_left, 5, 0, 0, 1))
 	
 func screenshake(intensity : float) -> void:
 	var rand_x := randf_range(intensity, 2 * intensity)
@@ -22,7 +22,7 @@ func screenshake(intensity : float) -> void:
 	camera_2d.offset = Vector2(rand_x, rand_y)
 
 func fade_to_white(progress : float) -> void:
-	var alpha := fade_to_white_curve.sample_baked(progress) * 255
+	var alpha := fade_to_white_curve.sample_baked(progress)
 	color_rect.color.a = alpha
 
 func _on_main_timer_timeout() -> void:
