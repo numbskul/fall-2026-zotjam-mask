@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b8g6m4147uhro" path="res://scenes/Player.tscn" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://dlb6voim3x48f" path="res://scripts/main.gd" id="1_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://dwmopjv77t5mp" path="res://assets/art/room_size.png" id="1_vcsgt"]
+[ext_resource type="AudioStream" uid="uid://bhi3am85nh034" path="res://assets/audio/zotjammusicfall2026.mp3" id="2_lhr70"]
 [ext_resource type="Script" uid="uid://dax666j42iw2l" path="res://scripts/camera.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://yt4osn3uaebq" path="res://scripts/room.gd" id="5_c01mt"]
 [ext_resource type="PackedScene" uid="uid://bjwod8ftljqvt" path="res://scenes/mask_changer.tscn" id="6_c01mt"]
@@ -115,6 +116,10 @@ _data = {
 [node name="Main" type="Node" unique_id=1482057672]
 script = ExtResource("1_jlsqs")
 fade_to_white_curve = SubResource("Curve_v4udn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1700832345]
+stream = ExtResource("2_lhr70")
+autoplay = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=366107737]
 position = Vector2(1, 55)
