@@ -6,6 +6,7 @@ extends Node
 @onready var player: CharacterBody2D = $Player
 @export var fade_to_white_curve : Curve
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
+@onready var mask_changer: Node2D = $"Mask Changer"
 
 func _ready() -> void:
 	player.global_position = start_position.global_position
@@ -27,3 +28,10 @@ func fade_to_white(progress : float) -> void:
 
 func _on_main_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_player_restart_loop() -> void:
+	mask_changer.close_ui(false)
+	PlayerMaskData.reset_mask()
+	player.global_position = start_position.global_position
+	timer.start(0)

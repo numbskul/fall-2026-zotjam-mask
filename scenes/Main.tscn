@@ -102,15 +102,18 @@ autostart = true
 [node name="Mask Changer" parent="." unique_id=54939292 instance=ExtResource("6_c01mt")]
 position = Vector2(112, -58)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=533009580]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1776147275]
+layer = 500
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=259692169]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1678198208]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(1, 1, 1, 0)
 
+[connection signal="restart" from="Player" to="." method="_on_player_restart_loop"]
 [connection signal="timeout" from="Timer" to="." method="_on_main_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_game_timer_timeout"]

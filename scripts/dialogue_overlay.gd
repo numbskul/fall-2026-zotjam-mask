@@ -10,6 +10,8 @@ func start(dialog_id : String) -> void:
 func continue_dialog() -> void:
 	mad_talk_runtime.dialog_acknowledge()
 
+func abort() -> void:
+	mad_talk_runtime.dialog_abort()
 
 func _on_mad_talk_runtime_dialog_finished(sheet_name: Variant, sequence_id: Variant) -> void:
 	emit_signal("dialog_finished")

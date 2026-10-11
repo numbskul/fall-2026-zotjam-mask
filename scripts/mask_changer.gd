@@ -33,6 +33,7 @@ func close_ui(save : bool):
 			MadTalkGlobals.set_variable(item, str(new_mask_dict[item]))
 	canvas_layer.visible = false
 	PlayerMaskData.done_editing_mask.emit()
+	current_color = COLORS.BLACK
 
 func change_var(v : int, ch := 1) -> int:
 	return (v + ch) % 4
