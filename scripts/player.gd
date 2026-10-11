@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var dialogue_overlay: Control = $DialogueOverlay
 @onready var player_interaction_range: Area2D = $PlayerInteractionRange
 @export var movement_speed = 96.0
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var timer : Timer
 
@@ -22,6 +23,24 @@ func _process(delta: float) -> void:
 	gameplay_ui.set_mask_visible(current_state == STATES.MOVING || current_state == STATES.IDLE)
 	gameplay_ui.update_timer_label(timer.time_left)
 	gameplay_ui.update_mask(PlayerMaskData.mask_dict)
+	if current_state != STATES.MOVING:
+		if current_facing == FACINGS.UP:
+			animated_sprite_2d.play("idle_front")
+		elif current_facing == FACINGS.LEFT:
+			animated_sprite_2d.play("idle_right")
+		elif current_facing == FACINGS.RIGHT:
+			animated_sprite_2d.play("idle_left")
+		elif current_facing == FACINGS.DOWN:
+			animated_sprite_2d.play("idle_back")
+	else:
+		if current_facing == FACINGS.UP:
+			animated_sprite_2d.play("walking_front")
+		elif current_facing == FACINGS.LEFT:
+			animated_sprite_2d.play("walking_right")
+		elif current_facing == FACINGS.RIGHT:
+			animated_sprite_2d.play("walking_left")
+		elif current_facing == FACINGS.DOWN:
+			animated_sprite_2d.play("walking_back")
 	
 func _physics_process(delta: float) -> void:
 	var direction : Vector2 = get_movement_input()
@@ -46,7 +65,7 @@ func update_facing(input_direction : Vector2) -> void:
 	if input_direction.y != 0:
 		current_facing = FACINGS.UP if input_direction.y > 0 else FACINGS.DOWN
 	elif input_direction.x != 0:
-		current_facing = FACINGS.LEFT if input_direction.y > 0 else FACINGS.RIGHT
+		current_facing = FACINGS.LEFT if input_direction.x > 0 else FACINGS.RIGHT
 
 func handle_movement(input_direction : Vector2) -> void:
 	if input_direction:

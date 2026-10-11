@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bxjbq20b03wnk"]
+
+[ext_resource type="Texture2D" uid="uid://kk1xw4vxpuns" path="res://assets/art/character_sprites/Donal Tuff.png" id="1_eu3pb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f03gl"]
+atlas = ExtResource("1_eu3pb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tdob"]
+atlas = ExtResource("1_eu3pb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7rxf"]
+atlas = ExtResource("1_eu3pb")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wet3"]
+atlas = ExtResource("1_eu3pb")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f03gl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7tdob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7rxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wet3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
