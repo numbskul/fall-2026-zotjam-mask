@@ -20,6 +20,8 @@ texture = ExtResource("1_fwk40")
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=31355611]
+layer = 10
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=194201354]
 layout_mode = 3

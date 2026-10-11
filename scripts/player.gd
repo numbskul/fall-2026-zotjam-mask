@@ -14,6 +14,8 @@ enum STATES {IDLE, MOVING, TALKING, CHANGING_MASK}
 var current_facing := FACINGS.DOWN
 var current_state := STATES.IDLE
 
+signal restart
+
 @onready var dynamic_mask: AnimatedSprite2D = $DynamicMask
 
 func _ready() -> void:
@@ -60,7 +62,8 @@ func get_movement_input() -> Vector2:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	if current_state != STATES.TALKING && current_state != STATES.CHANGING_MASK:
 		current_state = STATES.MOVING if input_dir else STATES.IDLE
-	return input_dir 
+		return input_dir
+	return Vector2.ZERO
 
 func update_facing(input_direction : Vector2) -> void:
 	if input_direction.y != 0:
@@ -75,6 +78,8 @@ func handle_movement(input_direction : Vector2) -> void:
 		velocity = Vector2.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("restart"):
+		restart_loop()
 	if event.is_action_pressed("interact"):
 		var id := ""
 		for object in player_interaction_range.get_overlapping_bodies():
@@ -105,3 +110,10 @@ func _on_game_timer_timeout() -> void:
 func _on_done_editing() -> void:
 	current_state = STATES.IDLE
 	gameplay_ui.set_mask_visible(true)
+
+
+func restart_loop():
+	dialogue_overlay.abort()
+	current_state = STATES.IDLE
+	restart.emit()
+	
