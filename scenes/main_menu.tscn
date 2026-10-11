@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://dsu3f6vjtnwwv"]
+
+[ext_resource type="Script" uid="uid://du4b3gd5c7tj1" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi4cx"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7irk"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(1, 0.83137256, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bxb6r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4udn"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3ulh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxb6r"]
+bg_color = Color(1, 0.6, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kur6e"]
+
+[node name="Main Menu" type="Control" unique_id=163402704]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l6cm7")
+
+[node name="Main Background" type="Panel" parent="." unique_id=216138660]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.0
+offset_top = -178.0
+offset_right = 320.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gi4cx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=478915670]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.25
+offset_top = -72.0
+offset_right = 77.25
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 19
+
+[node name="Begin Button" type="Button" parent="VBoxContainer" unique_id=450978273]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.7607843, 0, 1)
+theme_override_constants/h_separation = 8
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7irk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bxb6r")
+text = "Begin"
+
+[node name="Settings Button" type="Button" parent="VBoxContainer" unique_id=1753891763]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.7921569, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_v4udn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i3ulh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bxb6r")
+text = "Settings"
+
+[node name="Credits Button" type="Button" parent="VBoxContainer" unique_id=949286003]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.7921569, 1, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_v4udn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i3ulh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bxb6r")
+text = "Credits"
+
+[node name="Exit Button" type="Button" parent="." unique_id=1202444666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = 112.0
+offset_right = 77.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_bxb6r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i3ulh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kur6e")
+text = "Quit Game
+"
+
+[node name="Title" type="Label" parent="." unique_id=1205985278]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -153.0
+offset_right = 51.0
+offset_bottom = -130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 65
+text = "[Mask Game]"
+
+[connection signal="pressed" from="VBoxContainer/Begin Button" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
