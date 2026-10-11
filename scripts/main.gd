@@ -35,7 +35,14 @@ func _on_main_timer_timeout() -> void:
 
 
 func _on_player_restart_loop() -> void:
-	mask_changer.close_ui(false)
-	PlayerMaskData.reset_mask()
-	player.global_position = start_position.global_position
-	timer.start(0)
+	animation_player.play("restart_loop_fade_out")
+	timer.stop()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "restart_loop_fade_out":
+		timer.start(0)
+		mask_changer.close_ui(false)
+		PlayerMaskData.reset_mask()
+		player.global_position = start_position.global_position
+		animation_player.play("restart_loop_fade_in")

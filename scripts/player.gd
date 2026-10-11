@@ -110,7 +110,11 @@ func _on_done_editing() -> void:
 
 
 func restart_loop():
-	dialogue_overlay.abort()
-	current_state = STATES.IDLE
 	restart.emit()
 	
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "restart_loop_fade_out":
+		dialogue_overlay.abort()
+		current_state = STATES.IDLE
