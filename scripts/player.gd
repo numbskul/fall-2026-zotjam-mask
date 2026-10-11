@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var journal: CanvasLayer = $Journal
 @onready var dialogue_overlay: Control = $DialogueOverlay
 @onready var player_interaction_range: Area2D = $PlayerInteractionRange
 @export var movement_speed = 96.0
@@ -57,6 +58,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if id != "":
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
+			journal.add_entry(id)
 			dynamic_mask.set_mask(GREEN_MASK)
 
 func _input(event: InputEvent) -> void:
