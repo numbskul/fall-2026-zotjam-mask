@@ -15,6 +15,6 @@ func update_mask(dict : Dictionary) -> void:
 	dynamic_mask.set_mask(dict)
 
 func update_timer_label(time : int):
-	var minutes = time / 60
-	var seconds = time % 60
-	label.text = str(minutes) + ":" + str(seconds)
+	var minutes = str(time / 60)
+	var seconds = str(time % 60) if time % 60 > 9 else str(0) + str(time % 60)
+	label.text = minutes + ":" + seconds

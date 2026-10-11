@@ -7,15 +7,19 @@ extends Node
 @export var fade_to_white_curve : Curve
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 @onready var mask_changer: Node2D = $"Mask Changer"
+@export var screenshake_intensity := 0.0
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _ready() -> void:
 	player.global_position = start_position.global_position
 
-func _process(delta: float) -> void:
-	if timer.time_left < 15:
-		screenshake(remap(timer.time_left, 15, 0, 0, 1))
-	if timer.time_left < 5:
-		fade_to_white(remap(timer.time_left, 5, 0, 0, 1))
+func _process(delta: float) -> void:		
+	if timer.time_left <= 15:
+		if !animation_player.is_playing():
+			animation_player.play("bomb_explodes")
+		screenshake(screenshake_intensity)
+		
 	
 func screenshake(intensity : float) -> void:
 	var rand_x := randf_range(intensity, 2 * intensity)
