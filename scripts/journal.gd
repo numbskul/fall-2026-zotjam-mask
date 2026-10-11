@@ -2,12 +2,13 @@ extends CanvasLayer
 class_name Journal
 
 @onready var item_list: ItemList = $Control/Panel/Entries/ItemList
-static var entries: Dictionary[String, Array]
+var entries: Dictionary[String, Array]
 
-static func add_entry(id: String) -> void:
+func add_entry(id: String) -> void:
 	if (entries.get(id) != null):
 		return;
 	entries[id] = Dialogue_Contents.dialogues[id]
+	refresh()
 
 func _ready() -> void:
 	item_list.item_activated.connect(_cross_out)
@@ -23,8 +24,8 @@ func _cross_out(index: int) -> void:
 			struck += c + "\u0336"
 		item_list.set_item_text(index, struck)
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("toggle_journal"):
+func _unhandled_input(event: InputEvent) -> void:	
+	if event is InputEventKey and event.pressed and event.keycode == KEY_J:
 		visible = not visible
 
 func refresh() -> void:

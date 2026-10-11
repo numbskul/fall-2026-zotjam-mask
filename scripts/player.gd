@@ -20,6 +20,7 @@ signal restart
 
 func _ready() -> void:
 	PlayerMaskData.done_editing_mask.connect(_on_done_editing)
+	dialogue_overlay.dialog_finished.connect(_on_dialogue_overlay_dialog_finished)
 	pass
 
 func _process(delta: float) -> void:
@@ -94,15 +95,18 @@ func _unhandled_input(event: InputEvent) -> void:
 		if id != "" && current_state != STATES.TALKING && current_state != STATES.CHANGING_MASK:
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
-			journal.add_entry(id)
 			# dynamic_mask.set_mask(GREEN_MASK)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and current_state == STATES.TALKING:
 		dialogue_overlay.continue_dialog()
 
-func _on_dialogue_overlay_dialog_finished() -> void:
+func _on_dialogue_overlay_dialog_finished(sheet_name: Variant, sequence_id: Variant) -> void:
 	current_state = STATES.IDLE
+	var id = sheet_name
+	if (sequence_id == 0): id += " (Mask)"
+	else: id += " (Pre-Mask)"
+	journal.add_entry(id)
 
 func _on_game_timer_timeout() -> void:
 	pass
@@ -114,7 +118,6 @@ func _on_done_editing() -> void:
 
 func restart_loop():
 	restart.emit()
-	
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
