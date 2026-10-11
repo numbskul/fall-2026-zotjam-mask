@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cmp8r6wge461h" path="res://assets/art/character_sprites/Maria Caloz.png" id="11_1epkh"]
 [ext_resource type="Texture2D" uid="uid://nspj8k3pk6kd" path="res://assets/art/character_sprites/Peter Selkovich.png" id="12_o2j65"]
 [ext_resource type="Texture2D" uid="uid://qeutjocqk45" path="res://assets/art/character_sprites/Randolph Ferguson.png" id="13_kup13"]
+[ext_resource type="FontFile" uid="uid://dlni8k6x8yshq" path="res://assets/resources/monogram.ttf" id="15_1epkh"]
+[ext_resource type="FontFile" uid="uid://dle83vqj56aj1" path="res://assets/resources/monogram-extended-italic.ttf" id="15_l5dlf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v4udn"]
 atlas = ExtResource("4_h2hwb")
@@ -183,6 +185,7 @@ texture = ExtResource("3_28p24")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("15_1epkh")
 theme_override_font_sizes/font_size = 8
 text = "test"
 horizontal_alignment = 1
@@ -208,7 +211,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 5
+theme_override_fonts/normal_font = ExtResource("15_1epkh")
+theme_override_fonts/bold_font = ExtResource("15_1epkh")
+theme_override_fonts/bold_italics_font = ExtResource("15_l5dlf")
+theme_override_fonts/italics_font = ExtResource("15_l5dlf")
+theme_override_fonts/mono_font = ExtResource("15_1epkh")
+theme_override_font_sizes/normal_font_size = 8
 fit_content = true
 
 [connection signal="dialog_finished" from="MadTalkRuntime" to="." method="_on_mad_talk_runtime_dialog_finished"]
