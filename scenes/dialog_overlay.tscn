@@ -3,6 +3,130 @@
 [ext_resource type="Script" uid="uid://5oaqvqdovm4g" path="res://scripts/dialogue_overlay.gd" id="1_djv66"]
 [ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_utxks"]
 [ext_resource type="Texture2D" uid="uid://bettpx3vy2nm4" path="res://assets/art/icon.svg" id="3_28p24"]
+[ext_resource type="Script" uid="uid://crm8hyh7nn5vb" path="res://addons/madtalk/runtime/CharacterData.gd" id="3_32db6"]
+[ext_resource type="Texture2D" uid="uid://dcvc3bt15r30k" path="res://assets/art/character_sprites/Anne Acqanda.png" id="4_h2hwb"]
+[ext_resource type="Texture2D" uid="uid://kk1xw4vxpuns" path="res://assets/art/character_sprites/Donal Tuff.png" id="5_5guqn"]
+[ext_resource type="Texture2D" uid="uid://ckxkror88ho5a" path="res://assets/art/character_sprites/Geoff Sterling.png" id="6_xpcuv"]
+[ext_resource type="Texture2D" uid="uid://cw5bvp8tolufg" path="res://assets/art/character_sprites/Henry Callinger.png" id="7_5guqn"]
+[ext_resource type="Texture2D" uid="uid://4g2rp6l6tnwo" path="res://assets/art/character_sprites/Jeremy Femurspyne.png" id="8_xpcuv"]
+[ext_resource type="Texture2D" uid="uid://ba7xl6y5dw2gf" path="res://assets/art/character_sprites/Karen Soiree.png" id="9_qwvnb"]
+[ext_resource type="Texture2D" uid="uid://bm3lyjtxbowit" path="res://assets/art/character_sprites/Margaret Vinewaters.png" id="10_l5dlf"]
+[ext_resource type="Texture2D" uid="uid://cmp8r6wge461h" path="res://assets/art/character_sprites/Maria Caloz.png" id="11_1epkh"]
+[ext_resource type="Texture2D" uid="uid://nspj8k3pk6kd" path="res://assets/art/character_sprites/Peter Selkovich.png" id="12_o2j65"]
+[ext_resource type="Texture2D" uid="uid://qeutjocqk45" path="res://assets/art/character_sprites/Randolph Ferguson.png" id="13_kup13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4udn"]
+atlas = ExtResource("4_h2hwb")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_fl4st"]
+script = ExtResource("3_32db6")
+id = "AA"
+name = "Anne Acquanda"
+avatar = SubResource("AtlasTexture_v4udn")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86kbs"]
+atlas = ExtResource("5_5guqn")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_kur6e"]
+script = ExtResource("3_32db6")
+id = "DT"
+name = "Donald Tuff"
+avatar = SubResource("AtlasTexture_86kbs")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogynd"]
+atlas = ExtResource("6_xpcuv")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_gi4cx"]
+script = ExtResource("3_32db6")
+id = "GS"
+name = "Geoff Sterling"
+avatar = SubResource("AtlasTexture_ogynd")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50svy"]
+atlas = ExtResource("7_5guqn")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_mjnvi"]
+script = ExtResource("3_32db6")
+id = "HC"
+name = "Henry Callinger"
+avatar = SubResource("AtlasTexture_50svy")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kur6e"]
+atlas = ExtResource("8_xpcuv")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_6yf53"]
+script = ExtResource("3_32db6")
+id = "JF"
+name = "Jeremy Femurspyne"
+avatar = SubResource("AtlasTexture_kur6e")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejnm1"]
+atlas = ExtResource("9_qwvnb")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl4st"]
+atlas = SubResource("AtlasTexture_ejnm1")
+
+[sub_resource type="Resource" id="Resource_wspnu"]
+script = ExtResource("3_32db6")
+id = "KS"
+name = "Karen Soiree"
+avatar = SubResource("AtlasTexture_fl4st")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ook2k"]
+atlas = ExtResource("10_l5dlf")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_0mplr"]
+script = ExtResource("3_32db6")
+id = "MV"
+name = "Margaret Vinewaters"
+avatar = SubResource("AtlasTexture_ook2k")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi4cx"]
+atlas = ExtResource("11_1epkh")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_hkg3h"]
+script = ExtResource("3_32db6")
+id = "MC"
+name = "Maria Caloz"
+avatar = SubResource("AtlasTexture_gi4cx")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjnvi"]
+atlas = ExtResource("12_o2j65")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_uwwod"]
+script = ExtResource("3_32db6")
+id = "PS"
+name = "Peter Selkovich"
+avatar = SubResource("AtlasTexture_mjnvi")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yf53"]
+atlas = ExtResource("13_kup13")
+region = Rect2(4, 0, 24, 24)
+
+[sub_resource type="Resource" id="Resource_ig706"]
+script = ExtResource("3_32db6")
+id = "RF"
+name = "Randolph Ferguson"
+avatar = SubResource("AtlasTexture_6yf53")
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
 
 [node name="DialogOverlay" type="Control" unique_id=1751266484]
 layout_mode = 3
@@ -15,16 +139,16 @@ script = ExtResource("1_djv66")
 
 [node name="MadTalkRuntime" type="Node" parent="." unique_id=2127828774]
 script = ExtResource("2_utxks")
+ListOfCharacters = Array[ExtResource("3_32db6")]([SubResource("Resource_fl4st"), SubResource("Resource_kur6e"), SubResource("Resource_gi4cx"), SubResource("Resource_mjnvi"), SubResource("Resource_6yf53"), SubResource("Resource_wspnu"), SubResource("Resource_0mplr"), SubResource("Resource_hkg3h"), SubResource("Resource_uwwod"), SubResource("Resource_ig706")])
 DialogMainControl = NodePath("../CanvasLayer/MarginContainer")
 DialogMessageBox = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/TextMargins/TextBoxPanel")
 DialogMessageLabel = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/TextMargins/TextBoxPanel/RichTextLabel")
-DialogButtonsMenu = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel")
-DialogButtonsContainer = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel/ButtonContainer")
+DialogSpeakerLabel = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins/VBoxContainer/Speaker Name")
+DialogSpeakerAvatar = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins/VBoxContainer/Speaker Texture")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622600937]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1326842280]
-visible = false
 anchors_preset = -1
 anchor_top = 0.7222222
 anchor_right = 1.0
@@ -40,11 +164,27 @@ layout_mode = 2
 
 [node name="TextureMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox" unique_id=166921975]
 layout_mode = 2
+size_flags_horizontal = 0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins" unique_id=953960388]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins" unique_id=1742456433]
 layout_mode = 2
+
+[node name="Speaker Texture" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins/VBoxContainer" unique_id=953960388]
+texture_filter = 3
+custom_minimum_size = Vector2(30, 30)
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
 texture = ExtResource("3_28p24")
-expand_mode = 2
+
+[node name="Speaker Name" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins/VBoxContainer" unique_id=1232941338]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 8
+text = "test"
+horizontal_alignment = 1
 
 [node name="DialogueMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox" unique_id=1285872903]
 layout_mode = 2
@@ -68,22 +208,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 5
-
-[node name="ButtonMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer" unique_id=1135838135]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ButtonPanel" type="Panel" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins" unique_id=463073254]
-layout_mode = 2
-
-[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel" unique_id=1410580881]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+fit_content = true
 
 [connection signal="dialog_finished" from="MadTalkRuntime" to="." method="_on_mad_talk_runtime_dialog_finished"]
