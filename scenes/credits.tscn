@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://d20c4xltqlt8v"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwo76"]
+[ext_resource type="Script" uid="uid://d2unu3yevl02a" path="res://scenes/credits.gd" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://djr3d7r7h7615" path="res://PixNull.ttf" id="2_0ctdu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yeqti"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbfq"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gwij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mah5v"]
+bg_color = Color(1, 0.83137256, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyhnv"]
 
 [node name="Credits" type="Control" unique_id=805394054]
 layout_mode = 3
@@ -10,18 +23,109 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2ckv8")
 
-[node name="Main Background" type="Panel" parent="." unique_id=591685180]
+[node name="Main Background" type="Panel" parent="." unique_id=781106384]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.0
-offset_top = -178.0
-offset_right = 320.0
-offset_bottom = 183.0
+offset_left = -161.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 91.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_jwo76")
+theme_override_styles/panel = SubResource("StyleBoxFlat_yeqti")
+
+[node name="Credits Title" type="Label" parent="." unique_id=665983169]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_right = 76.5
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 50
+text = "CREDITS"
+
+[node name="Back Button" type="Button" parent="." unique_id=1703351207]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -34.0
+offset_right = 28.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.7921569, 1, 1)
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fbfq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8gwij")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mah5v")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kyhnv")
+text = "Back"
+
+[node name="Dev List" type="Label" parent="." unique_id=75976072]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 58.0
+offset_right = 106.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 12
+text = "Dev #1 - 
+Dev #2 - 
+Dev #3 -
+Dev #4 - 
+Dev #5 - "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=605744701]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -109.0
+offset_top = -47.0
+offset_right = -15.0
+offset_bottom = 64.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Font Used" type="Label" parent="VBoxContainer" unique_id=250088721]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 10
+text = "       Font Used: 
+PixNull by NullOffset
+"
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=718090172]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 10
+text = "SFXs Used:
+"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=161855396]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_0ctdu")
+theme_override_font_sizes/font_size = 10
+text = "       Soundtrack:
+Grande Tarantelle (1872) -
+      L. M. Gottschalk."
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
