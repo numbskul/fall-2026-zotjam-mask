@@ -86,5 +86,4 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[connection signal="dialog_aborted" from="MadTalkRuntime" to="." method="_on_mad_talk_runtime_dialog_finished"]
 [connection signal="dialog_finished" from="MadTalkRuntime" to="." method="_on_mad_talk_runtime_dialog_finished"]
