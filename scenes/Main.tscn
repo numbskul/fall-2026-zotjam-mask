@@ -1,89 +1,114 @@
 [gd_scene format=3 uid="uid://cok8umbyeckie"]
 
 [ext_resource type="PackedScene" uid="uid://b8g6m4147uhro" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://dlb6voim3x48f" path="res://scripts/main.gd" id="1_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://dwmopjv77t5mp" path="res://assets/art/room_size.png" id="1_vcsgt"]
 [ext_resource type="Script" uid="uid://dax666j42iw2l" path="res://scripts/camera.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://yt4osn3uaebq" path="res://scripts/room.gd" id="5_c01mt"]
 [ext_resource type="PackedScene" uid="uid://bjwod8ftljqvt" path="res://scenes/mask_changer.tscn" id="6_c01mt"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
 
+[sub_resource type="Curve" id="Curve_v4udn"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8930348, 0.17534244), 0.40242338, 1.6053864, 0, 0, Vector2(0.98507464, 0.9917808), 11.289005, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi4cx"]
 size = Vector2(320, 180)
 
 [node name="Main" type="Node" unique_id=1482057672]
+script = ExtResource("1_jlsqs")
+fade_to_white_curve = SubResource("Curve_v4udn")
 
-[node name="Room1" type="Area2D" parent="." unique_id=562013635 node_paths=PackedStringArray("camera_controller", "lock_point")]
+[node name="Node2D" type="Node2D" parent="." unique_id=366107737]
+position = Vector2(1, 55)
+
+[node name="Room1" type="Area2D" parent="Node2D" unique_id=562013635 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(-1, -55)
 script = ExtResource("5_c01mt")
-camera_controller = NodePath("../Camera2D")
+camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
-[node name="Sprite2D" type="Sprite2D" parent="Room1" unique_id=249117252]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Room1" unique_id=249117252]
 texture = ExtResource("1_vcsgt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room1" unique_id=1748131171]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room1" unique_id=1748131171]
 shape = SubResource("RectangleShape2D_gi4cx")
 
-[node name="Lockpoint" type="Node2D" parent="Room1" unique_id=81750511]
+[node name="Lockpoint" type="Node2D" parent="Node2D/Room1" unique_id=81750511]
 
-[node name="Room2" type="Area2D" parent="." unique_id=80302181 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(330, 0)
+[node name="Room2" type="Area2D" parent="Node2D" unique_id=80302181 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(329, -55)
 script = ExtResource("5_c01mt")
-camera_controller = NodePath("../Camera2D")
+camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
-[node name="Sprite2D" type="Sprite2D" parent="Room2" unique_id=936179183]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Room2" unique_id=936179183]
 texture = ExtResource("1_vcsgt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room2" unique_id=1038123210]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room2" unique_id=1038123210]
 shape = SubResource("RectangleShape2D_gi4cx")
 
-[node name="Lockpoint" type="Node2D" parent="Room2" unique_id=372970660]
+[node name="Lockpoint" type="Node2D" parent="Node2D/Room2" unique_id=372970660]
 
-[node name="Room3" type="Area2D" parent="." unique_id=1953676981 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(-330, 0)
+[node name="Room3" type="Area2D" parent="Node2D" unique_id=1953676981 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(-331, -55)
 script = ExtResource("5_c01mt")
-camera_controller = NodePath("../Camera2D")
+camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
-[node name="Sprite2D" type="Sprite2D" parent="Room3" unique_id=1623591099]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Room3" unique_id=1623591099]
 texture = ExtResource("1_vcsgt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room3" unique_id=602740638]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room3" unique_id=602740638]
 shape = SubResource("RectangleShape2D_gi4cx")
 
-[node name="Lockpoint" type="Node2D" parent="Room3" unique_id=480228777]
+[node name="Lockpoint" type="Node2D" parent="Node2D/Room3" unique_id=480228777]
 
-[node name="Room4" type="Area2D" parent="." unique_id=1002171796 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(0, -190)
+[node name="Room4" type="Area2D" parent="Node2D" unique_id=1002171796 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(-1, -245)
 script = ExtResource("5_c01mt")
-camera_controller = NodePath("../Camera2D")
+camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
-[node name="Sprite2D" type="Sprite2D" parent="Room4" unique_id=2125760668]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/Room4" unique_id=2125760668]
 texture = ExtResource("1_vcsgt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Room4" unique_id=284979272]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room4" unique_id=284979272]
 shape = SubResource("RectangleShape2D_gi4cx")
 
-[node name="Lockpoint" type="Node2D" parent="Room4" unique_id=1205089213]
+[node name="Lockpoint" type="Node2D" parent="Node2D/Room4" unique_id=1205089213]
 
-[node name="CharacterBody2D" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
+[node name="StartPosition" type="Marker2D" parent="Node2D" unique_id=2127542161]
+
+[node name="Player" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
+position = Vector2(514, -196)
 timer = NodePath("../Timer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
 script = ExtResource("4_vcsgt")
-target = NodePath("../CharacterBody2D")
+target = NodePath("../Player")
 
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
 position = Vector2(-122, -53)
 dialog_id = "testing_sheet_1"
 
 [node name="Timer" type="Timer" parent="." unique_id=344907707]
-wait_time = 120.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 
 [node name="Mask Changer" parent="." unique_id=54939292 instance=ExtResource("6_c01mt")]
 position = Vector2(112, -58)
 
-[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_game_timer_timeout"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=533009580]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=259692169]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[connection signal="timeout" from="Timer" to="." method="_on_main_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Player" method="_on_game_timer_timeout"]
