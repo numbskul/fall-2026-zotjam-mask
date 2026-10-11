@@ -77,7 +77,7 @@ target = NodePath("../CharacterBody2D")
 
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
 position = Vector2(-122, -53)
-dialog_id = "testing_sheet_1"
+dialog_id = "Donald Tuff"
 spritesheet = ExtResource("6_nxtc6")
 
 [node name="Timer" type="Timer" parent="." unique_id=344907707]
