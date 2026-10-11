@@ -9,9 +9,6 @@ func _ready() -> void:
 	add_to_group("mask_changer")
 	canvas_layer.visible = false
 
-func mask_changer_ui_visibility(is_visible : bool):
-	canvas_layer.visible = is_visible
-
 ## Mask UI Code
 
 @onready var black: Button = $CanvasLayer/Control/Control/VBoxContainer/HBoxContainer/Black
@@ -20,13 +17,22 @@ func mask_changer_ui_visibility(is_visible : bool):
 @onready var green: Button = $CanvasLayer/Control/Control/VBoxContainer/HBoxContainer/Green
 @onready var dynamic_mask: AnimatedSprite2D = $CanvasLayer/Control/CenterContainer/Control/DynamicMask
 
-var new_mask_dict : Dictionary = PlayerMaskData.mask_dict
+var new_mask_dict : Dictionary = PlayerMaskData.mask_dict.duplicate()
 enum COLORS {BLACK, RED, BLUE, GREEN}
 var current_color := COLORS.BLACK
 
 func open_ui():
-	new_mask_dict = PlayerMaskData.mask_dict
+	new_mask_dict = PlayerMaskData.mask_dict.duplicate()
+	update_display_mask()
 	canvas_layer.visible = true
+
+func close_ui(save : bool):
+	if save:
+		PlayerMaskData.mask_dict = new_mask_dict
+		for item in new_mask_dict:
+			MadTalkGlobals.set_variable(item, str(new_mask_dict[item]))
+	canvas_layer.visible = false
+	PlayerMaskData.done_editing_mask.emit()
 
 func change_var(v : int, ch := 1) -> int:
 	return (v + ch) % 4
@@ -95,8 +101,7 @@ func _mouth_assign_color() -> void:
 	update_display_mask()
 
 func _on_confirm_button_down() -> void:
-	PlayerMaskData.mask_dict = new_mask_dict
-	canvas_layer.visible = false
+	close_ui(true)
 
 func _on_cancel_button_down() -> void:
-	canvas_layer.visible = false
+	close_ui(false)

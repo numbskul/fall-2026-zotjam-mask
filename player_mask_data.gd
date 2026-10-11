@@ -12,3 +12,5 @@ var mask_dict = {
 
 func update_mask_dict(new_mask_dict : MaskResource):
 	mask_dict = new_mask_dict
+
+signal done_editing_mask

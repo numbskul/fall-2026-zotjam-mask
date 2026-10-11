@@ -8,25 +8,27 @@ extends CharacterBody2D
 @export var timer : Timer
 
 enum FACINGS {UP, DOWN, LEFT, RIGHT}
-enum STATES {IDLE, MOVING, TALKING}
+enum STATES {IDLE, MOVING, TALKING, CHANGING_MASK}
 var current_facing := FACINGS.DOWN
 var current_state := STATES.IDLE
 
 @onready var dynamic_mask: AnimatedSprite2D = $DynamicMask
 
 func _ready() -> void:
+	PlayerMaskData.done_editing_mask.connect(_on_done_editing)
 	pass
 
 func _process(delta: float) -> void:
-	gameplay_ui.set_mask_visible(current_state != STATES.TALKING)
+	gameplay_ui.set_mask_visible(current_state == STATES.MOVING || current_state == STATES.IDLE)
 	gameplay_ui.update_timer_label(timer.time_left)
 	gameplay_ui.update_mask(PlayerMaskData.mask_dict)
+	print(current_state, current_facing)
 	
 func _physics_process(delta: float) -> void:
 	var direction : Vector2 = get_movement_input()
 	update_facing(direction)
 	
-	if current_state != STATES.TALKING:
+	if current_state != STATES.TALKING && current_state != STATES.CHANGING_MASK:
 		player_interaction_range.look_at(position + direction)
 		handle_movement(direction)
 		
@@ -37,8 +39,8 @@ func _physics_process(delta: float) -> void:
 
 func get_movement_input() -> Vector2:
 	var input_dir := Input.get_vector("left", "right", "up", "down")
-	if current_state != STATES.TALKING:
-		current_state = STATES.MOVING if input_dir else STATES.MOVING
+	if current_state != STATES.TALKING && current_state != STATES.CHANGING_MASK:
+		current_state = STATES.MOVING if input_dir else STATES.IDLE
 	return input_dir 
 
 func update_facing(input_direction : Vector2) -> void:
@@ -61,8 +63,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				id = object.get_parent().get_dialog_id()
 				break
 			elif object.get_parent().is_in_group("mask_changer"):
-				pass
-		if id != "":
+				current_state = STATES.CHANGING_MASK
+				gameplay_ui.set_mask_visible(false)
+				object.get_parent().open_ui()
+				break
+		if id != "" && current_state != STATES.TALKING && current_state != STATES.CHANGING_MASK:
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
 
@@ -75,3 +80,7 @@ func _on_dialogue_overlay_dialog_finished() -> void:
 
 func _on_game_timer_timeout() -> void:
 	pass
+
+func _on_done_editing() -> void:
+	current_state = STATES.IDLE
+	gameplay_ui.set_mask_visible(true)
