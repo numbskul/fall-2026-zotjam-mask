@@ -5,87 +5,128 @@
 [ext_resource type="Script" uid="uid://b2mrnotqjr75d" path="res://addons/madtalk/components/resources/DialogNodeData.gd" id="4_f2ijm"]
 [ext_resource type="Script" uid="uid://butd1fwy4a2hn" path="res://addons/madtalk/components/resources/DialogSheetData.gd" id="5_vkpn8"]
 
+[sub_resource type="Resource" id="fl4st"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["mouth_color ", "3"]
+
+[sub_resource type="Resource" id="v4udn"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["mouth_shape ", "1"]
+
 [sub_resource type="Resource" id="6yf53"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = "Why, I’m glad you’re here friend! These prices are insane!"
 
 [sub_resource type="Resource" id="t2a6b"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = " Quite the steal for such an extraordinary ability, is it not?"
 
 [sub_resource type="Resource" id="lge7f"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = " I watched “Back to the Future” and always dreamed of doing what they did!"
 
 [sub_resource type="Resource" id="1e8bj"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = "Do you think I'll be able to do it for real?"
 
 [sub_resource type="Resource" id="kur6e"]
 script = ExtResource("4_f2ijm")
 position = Vector2(-260, -300)
-items = [SubResource("6yf53"), SubResource("t2a6b"), SubResource("lge7f"), SubResource("1e8bj")]
-continue_port_index = 0
+items = [SubResource("fl4st"), SubResource("v4udn"), SubResource("6yf53"), SubResource("t2a6b"), SubResource("lge7f"), SubResource("1e8bj")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="Resource_fl4st"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = "Hello there, do you have any business with me?"
 
 [sub_resource type="Resource" id="ronjm"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = "I’m trying to keep watch on the prices, so if you have any commonplace inquiries, please direct them to someone more.."
 
 [sub_resource type="Resource" id="scbln"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "AA"
 message_text = "... at your level?"
 
 [sub_resource type="Resource" id="Resource_v4udn"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-260, 140)
+position = Vector2(260, -280)
 items = [SubResource("Resource_fl4st"), SubResource("ronjm"), SubResource("scbln")]
 continue_port_index = 0
 
-[sub_resource type="Resource" id="v4udn"]
+[sub_resource type="Resource" id="Resource_bkkvj"]
 script = ExtResource("5_vkpn8")
 sheet_id = "Anne Acqanda"
 next_sequence_id = 2
 nodes = [SubResource("kur6e"), SubResource("Resource_v4udn")]
 
+[sub_resource type="Resource" id="wspnu"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["eye_shape ", "1"]
+
+[sub_resource type="Resource" id="0mplr"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["eye_color", "1"]
+
 [sub_resource type="Resource" id="gvup7"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "DT"
 message_text = "To tell you the truth, I look like a partygoer, but I’m really a culinary aficionado."
 
 [sub_resource type="Resource" id="1rg48"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "DT"
 message_text = "Ferguson hates me, but he’s just a buzzkill yo."
 
 [sub_resource type="Resource" id="4qw0o"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "DT"
 message_text = "I got the title of aficionado from eating 4 whole cakes in 5 minutes during high school, heh."
 
 [sub_resource type="Resource" id="udfvu"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-280, -40)
-items = [SubResource("gvup7"), SubResource("1rg48"), SubResource("4qw0o")]
-continue_port_index = 0
+position = Vector2(-460, -320)
+items = [SubResource("wspnu"), SubResource("0mplr"), SubResource("gvup7"), SubResource("1rg48"), SubResource("4qw0o")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="x2ldl"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "DT"
 message_text = "Sup, broski.  I just took a NASTY swig of this punch, and it isn’t calming me down!"
 
 [sub_resource type="Resource" id="bkkvj"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "DT"
 message_text = " I don’t even wanna talk to you, you look like you’re just gonna hic ruin my funk, you know?"
 
 [sub_resource type="Resource" id="j4aaj"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "DT"
 message_text = " Now buzz off, I need another drink."
 
 [sub_resource type="Resource" id="uno3w"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-280, 380)
+position = Vector2(-40, -300)
 items = [SubResource("x2ldl"), SubResource("bkkvj"), SubResource("j4aaj")]
 continue_port_index = 0
 
@@ -95,101 +136,145 @@ sheet_id = "Donald Tuff"
 next_sequence_id = 2
 nodes = [SubResource("udfvu"), SubResource("uno3w")]
 
+[sub_resource type="Resource" id="gi4cx"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["mouth_color ", "3"]
+
+[sub_resource type="Resource" id="Resource_j4aaj"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["mouth_shape ", "1"]
+
 [sub_resource type="Resource" id="ig706"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = "Oh! Joyous day it is! You know the prize, don’t you!?"
 
 [sub_resource type="Resource" id="6da8k"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = "Time. Travel. Ahaha!"
 
 [sub_resource type="Resource" id="0401h"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = "The Temporistic Foundation really does create marvels!"
 
 [sub_resource type="Resource" id="cop6a"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = " I’ll have a vacation in Hawaii, Bali, and Rome all in a day! Heh heh heh!"
 
 [sub_resource type="Resource" id="iioy7"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = "What’s up with that old fart in our posse, tho?"
 
-[sub_resource type="Resource" id="0mplr"]
+[sub_resource type="Resource" id="Resource_1rg48"]
 script = ExtResource("4_f2ijm")
 position = Vector2(-340, -460)
-items = [SubResource("ig706"), SubResource("6da8k"), SubResource("0401h"), SubResource("cop6a"), SubResource("iioy7")]
-continue_port_index = 0
+items = [SubResource("gi4cx"), SubResource("Resource_j4aaj"), SubResource("ig706"), SubResource("6da8k"), SubResource("0401h"), SubResource("cop6a"), SubResource("iioy7")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="uwwod"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = "I’ll have to contact the company; it seems like I may have enough funds to win! "
 
 [sub_resource type="Resource" id="ji0hg"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = "Wait, why am I sharing this with a [i]commoner[/i]?
 "
 
 [sub_resource type="Resource" id="xc0yo"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "GS"
 message_text = " Go back to your “partying” and save the real work for us!"
 
 [sub_resource type="Resource" id="hkg3h"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-340, 120)
+position = Vector2(200, -440)
 items = [SubResource("uwwod"), SubResource("ji0hg"), SubResource("xc0yo")]
 continue_port_index = 0
 
-[sub_resource type="Resource" id="wspnu"]
+[sub_resource type="Resource" id="Resource_4qw0o"]
 script = ExtResource("5_vkpn8")
 sheet_id = "Geoff Sterling"
 next_sequence_id = 2
-nodes = [SubResource("0mplr"), SubResource("hkg3h")]
+nodes = [SubResource("Resource_1rg48"), SubResource("hkg3h")]
+
+[sub_resource type="Resource" id="Resource_tiiv5"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["emblem_shape", "1"]
+
+[sub_resource type="Resource" id="Resource_uakif"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["emblem_color", "2"]
 
 [sub_resource type="Resource" id="grl7v"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = "Now, I’ve looked around this room for the third time, checking out who’s who."
 
 [sub_resource type="Resource" id="Resource_uj1nl"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = " And between you and me mate, I only think about [b]SIX[/b] of em are trustworthy."
 
 [sub_resource type="Resource" id="Resource_6d3fn"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = "The other three? Well, who gives a rat’s tushie?"
 
 [sub_resource type="Resource" id="Resource_86kbs"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = "They can all[b] blow[/b] for all I care."
 
 [sub_resource type="Resource" id="xyc8a"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-340, -260)
-items = [SubResource("grl7v"), SubResource("Resource_uj1nl"), SubResource("Resource_6d3fn"), SubResource("Resource_86kbs")]
-continue_port_index = 0
+position = Vector2(-880, -300)
+items = [SubResource("Resource_tiiv5"), SubResource("Resource_uakif"), SubResource("grl7v"), SubResource("Resource_uj1nl"), SubResource("Resource_6d3fn"), SubResource("Resource_86kbs")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="kvri2"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = "Smashin’ party innit? Ya know, you don’t look too snazzy, I reckon you’re a partygoer yourself?
 "
 
 [sub_resource type="Resource" id="Resource_x2ldl"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = " Eh, nah, ya look too fancy, but I guess anything’s possible."
 
 [sub_resource type="Resource" id="Resource_m2qb1"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = "Blasted Donald Tuff’s dressed like he’s about to go surfing and he’s s’posed to be a culinary aficionado..."
 
 [sub_resource type="Resource" id="Resource_ogynd"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "HC"
 message_text = "Weirdos."
 
 [sub_resource type="Resource" id="ukai7"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-340, 260)
+position = Vector2(-360, -280)
 items = [SubResource("kvri2"), SubResource("Resource_x2ldl"), SubResource("Resource_m2qb1"), SubResource("Resource_ogynd")]
 continue_port_index = 0
 
@@ -199,52 +284,75 @@ sheet_id = "Henry Callinger"
 next_sequence_id = 2
 nodes = [SubResource("xyc8a"), SubResource("ukai7")]
 
+[sub_resource type="Resource" id="dsmgf"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["emblem_shape", "1"]
+
+[sub_resource type="Resource" id="fwb2u"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["emblem_color", "2"]
+
 [sub_resource type="Resource" id="Resource_iyv7e"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "I can see past your front, friend."
 
 [sub_resource type="Resource" id="Resource_dsmgf"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "You’re no simple partygoer, but you’re no nobility, are you? No no no, you’re something more special."
 
 [sub_resource type="Resource" id="Resource_fwb2u"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "An exception."
 
 [sub_resource type="Resource" id="Resource_1yy6g"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "How did I know? I can smell you. Don’t worry, I won’t go tattling."
 
 [sub_resource type="Resource" id="Resource_ghijk"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "To tell you the truth, I’m no simple partygoer either. We are both the exceptions, aren’t we?"
 
 [sub_resource type="Resource" id="Resource_t2a6b"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = " Playing our false roles just so long as it suits us."
 
 [sub_resource type="Resource" id="Resource_lge7f"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-320, -240)
-items = [SubResource("Resource_iyv7e"), SubResource("Resource_dsmgf"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk"), SubResource("Resource_t2a6b")]
-continue_port_index = 0
+position = Vector2(-780, -260)
+items = [SubResource("dsmgf"), SubResource("fwb2u"), SubResource("Resource_iyv7e"), SubResource("Resource_dsmgf"), SubResource("Resource_fwb2u"), SubResource("Resource_1yy6g"), SubResource("Resource_ghijk"), SubResource("Resource_t2a6b")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="Resource_1e8bj"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "Quite the elitists aren’t they, those investors and artisans. I’d love to rip into them..have a little taste of their bones…"
 
 [sub_resource type="Resource" id="Resource_ronjm"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "Argh, pay me no mind. I should keep my mouth shut lest you be one of their ilk.. "
 
 [sub_resource type="Resource" id="Resource_scbln"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "JF"
 message_text = "If you’re truly one of us..well, I’ll figure it out in due time."
 
 [sub_resource type="Resource" id="Resource_6da8k"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-320, 380)
+position = Vector2(-280, -180)
 items = [SubResource("Resource_1e8bj"), SubResource("Resource_ronjm"), SubResource("Resource_scbln")]
 continue_port_index = 0
 
@@ -254,44 +362,65 @@ sheet_id = "Jeremy Femurspyne"
 next_sequence_id = 2
 nodes = [SubResource("Resource_lge7f"), SubResource("Resource_6da8k")]
 
+[sub_resource type="Resource" id="1yy6g"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["emblem_shape", "1"]
+
+[sub_resource type="Resource" id="ghijk"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["emblem_color", "2"]
+
 [sub_resource type="Resource" id="Resource_uslxw"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = "Woah! Your face looks awesome!"
 
-[sub_resource type="Resource" id="fl4st"]
+[sub_resource type="Resource" id="Resource_f0gcp"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = "  I mean, its really pretty generic man! But at least you got some of the designs to match ours!"
 
 [sub_resource type="Resource" id="Resource_xyc8a"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = " I knew you weren’t one of those richy richies. Hey, have you seen Henry Callinger?"
 
 [sub_resource type="Resource" id="Resource_grl7v"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = " He’s pretty cool. He’s got nice moves!"
 
 [sub_resource type="Resource" id="Resource_ukai7"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-240, -300)
-items = [SubResource("Resource_uslxw"), SubResource("fl4st"), SubResource("Resource_xyc8a"), SubResource("Resource_grl7v")]
-continue_port_index = 0
+position = Vector2(-840, -240)
+items = [SubResource("1yy6g"), SubResource("ghijk"), SubResource("Resource_uslxw"), SubResource("Resource_f0gcp"), SubResource("Resource_xyc8a"), SubResource("Resource_grl7v")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="Resource_kvri2"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = "[b]OMG, HAIII![/b] "
 
 [sub_resource type="Resource" id="Resource_cc61g"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = "Ew, you’re not one of those rich hoity toity kids are ya? Your style is so lame."
 
 [sub_resource type="Resource" id="Resource_udfvu"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "KS"
 message_text = "Come back when you have some actual flair."
 
 [sub_resource type="Resource" id="Resource_qcrkj"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-260, 320)
+position = Vector2(-320, -220)
 items = [SubResource("Resource_kvri2"), SubResource("Resource_cc61g"), SubResource("Resource_udfvu")]
 continue_port_index = 0
 
@@ -301,40 +430,60 @@ sheet_id = "Karen Soiree"
 next_sequence_id = 2
 nodes = [SubResource("Resource_ukai7"), SubResource("Resource_qcrkj")]
 
+[sub_resource type="Resource" id="mjnvi"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["mouth_shape ", "1"]
+
+[sub_resource type="Resource" id="Resource_7lsnw"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["mouth_color", "3"]
+
 [sub_resource type="Resource" id="6twqy"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MV"
 message_text = "Oh dear, an old woman like me in a job like this, they’d never know a thing, haha!"
 
 [sub_resource type="Resource" id="Resource_kur6e"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MV"
 message_text = "The other investors thought it was crazy and said I was “blowing myself up” and getting too big for my britches."
 
 [sub_resource type="Resource" id="Resource_gi4cx"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MV"
 message_text = " But you know, I’m the second oldest person in the room, my luck is [b]TWO[/b]fold!"
 
 [sub_resource type="Resource" id="57kek"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-360, -220)
-items = [SubResource("6twqy"), SubResource("Resource_kur6e"), SubResource("Resource_gi4cx")]
-continue_port_index = 0
+position = Vector2(-520, -300)
+items = [SubResource("mjnvi"), SubResource("Resource_7lsnw"), SubResource("6twqy"), SubResource("Resource_kur6e"), SubResource("Resource_gi4cx")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="s11vk"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MV"
 message_text = "Oh dear, oh dear. I hope my friends weren’t rude to you."
 
 [sub_resource type="Resource" id="Resource_mjnvi"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MV"
 message_text = " They don’t see non investors as important sometimes, that time travel business has got them loony."
 
 [sub_resource type="Resource" id="Resource_ig706"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MV"
 message_text = "Well, I’ll let you get back to the party."
 
 [sub_resource type="Resource" id="ty1re"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-360, 220)
+position = Vector2(-120, -300)
 items = [SubResource("s11vk"), SubResource("Resource_mjnvi"), SubResource("Resource_ig706")]
 continue_port_index = 0
 
@@ -344,45 +493,66 @@ sheet_id = "Margaret Vinewaters"
 next_sequence_id = 2
 nodes = [SubResource("57kek"), SubResource("ty1re")]
 
+[sub_resource type="Resource" id="Resource_hvdsk"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["eye_shape", "1"]
+
+[sub_resource type="Resource" id="Resource_jp4jm"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["eye_color", "1"]
+
 [sub_resource type="Resource" id="86kbs"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = "You must try this first delight! It is quite, as we would say, the “BOMB!”"
 
 [sub_resource type="Resource" id="iyv7e"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = "Ahaha! It tastes so delicate, so delicious, that it feels like the NINE realms are expanding!"
 
-[sub_resource type="Resource" id="dsmgf"]
+[sub_resource type="Resource" id="Resource_qtnka"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = "What a heavenly experience."
 
 [sub_resource type="Resource" id="6d3fn"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-320, -140)
-items = [SubResource("86kbs"), SubResource("iyv7e"), SubResource("dsmgf")]
-continue_port_index = 0
+position = Vector2(-720, -240)
+items = [SubResource("Resource_hvdsk"), SubResource("Resource_jp4jm"), SubResource("86kbs"), SubResource("iyv7e"), SubResource("Resource_qtnka")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="ogynd"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = "Ohoho! You are simply a partygoer, yes? "
 
-[sub_resource type="Resource" id="fwb2u"]
+[sub_resource type="Resource" id="Resource_bkhx4"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = "Can you use your inferior tastebuds to try this dish?"
 
-[sub_resource type="Resource" id="1yy6g"]
+[sub_resource type="Resource" id="Resource_d0tsa"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = " I do not want to get my tongue, eh, dirtied if this is not well made."
 
-[sub_resource type="Resource" id="ghijk"]
+[sub_resource type="Resource" id="Resource_s0amn"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "MC"
 message_text = "No? Do not waste my time."
 
 [sub_resource type="Resource" id="m2qb1"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-320, 360)
-items = [SubResource("ogynd"), SubResource("fwb2u"), SubResource("1yy6g"), SubResource("ghijk")]
+position = Vector2(-260, -240)
+items = [SubResource("ogynd"), SubResource("Resource_bkhx4"), SubResource("Resource_d0tsa"), SubResource("Resource_s0amn")]
 continue_port_index = 0
 
 [sub_resource type="Resource" id="uj1nl"]
@@ -391,41 +561,61 @@ sheet_id = "Maria Caloz"
 next_sequence_id = 2
 nodes = [SubResource("6d3fn"), SubResource("m2qb1")]
 
+[sub_resource type="Resource" id="Resource_jl78q"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["eye_shape ", "1"]
+
+[sub_resource type="Resource" id="Resource_tbm1p"]
+script = ExtResource("2_48vp3")
+item_type = 1
+connected_to_id = 1
+condition_type = 4
+condition_values = ["eye_color", "1"]
+
 [sub_resource type="Resource" id="Resource_cop6a"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "RF"
 message_text = "My my, an esteemed gentleman from the club!"
 
 [sub_resource type="Resource" id="Resource_ji0hg"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "RF"
 message_text = " Our other new member Maria has been entertaining us with quite the stories all night! 
 "
 
 [sub_resource type="Resource" id="Resource_xc0yo"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "RF"
 message_text = "Her talent is to die for, and not to mention, she handles gunpowder as an accent in wine quite masterfully. "
 
 [sub_resource type="Resource" id="Resource_iioy7"]
 script = ExtResource("4_f2ijm")
-position = Vector2(-320, -220)
-items = [SubResource("Resource_cop6a"), SubResource("Resource_ji0hg"), SubResource("Resource_xc0yo")]
-continue_port_index = 0
+position = Vector2(-840, -220)
+items = [SubResource("Resource_jl78q"), SubResource("Resource_tbm1p"), SubResource("Resource_cop6a"), SubResource("Resource_ji0hg"), SubResource("Resource_xc0yo")]
+continue_port_index = 2
 
 [sub_resource type="Resource" id="Resource_57kek"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "RF"
 message_text = "I can tell you have never sauteed a seal tail before. "
 
 [sub_resource type="Resource" id="Resource_ty1re"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "RF"
 message_text = "Get to yapping with the other mangy dogs they call “partygoers!”"
 
 [sub_resource type="Resource" id="Resource_s11vk"]
 script = ExtResource("2_48vp3")
+message_speaker_id = "RF"
 message_text = "[font_size = {2}]I cannot believe [i]TUFF[/i] is part of our crew."
 
 [sub_resource type="Resource" id="Resource_0bfks"]
 script = ExtResource("4_f2ijm")
 sequence_id = 1
-position = Vector2(-320, 300)
+position = Vector2(-300, -120)
 items = [SubResource("Resource_57kek"), SubResource("Resource_ty1re"), SubResource("Resource_s11vk")]
 continue_port_index = 0
 
@@ -449,14 +639,14 @@ connected_to_id = 2
 condition_type = 4
 condition_values = ["mouth_color", "2"]
 
-[sub_resource type="Resource" id="mjnvi"]
+[sub_resource type="Resource" id="Resource_45srj"]
 script = ExtResource("2_48vp3")
 message_text = "Wow! You look.. both happy and sad? Good job!"
 
-[sub_resource type="Resource" id="gi4cx"]
+[sub_resource type="Resource" id="Resource_c3itg"]
 script = ExtResource("4_f2ijm")
 position = Vector2(320, 260)
-items = [SubResource("Resource_hkg3h"), SubResource("Resource_uwwod"), SubResource("mjnvi")]
+items = [SubResource("Resource_hkg3h"), SubResource("Resource_uwwod"), SubResource("Resource_45srj")]
 continue_port_index = 2
 
 [sub_resource type="Resource" id="Resource_wspnu"]
@@ -475,19 +665,47 @@ script = ExtResource("5_vkpn8")
 sheet_id = "testing_sheet_1"
 sheet_description = "Testing how dialogue can change based on player vars"
 next_sequence_id = 3
-nodes = [SubResource("gi4cx"), SubResource("Resource_0mplr")]
+nodes = [SubResource("Resource_c3itg"), SubResource("Resource_0mplr")]
+
+[sub_resource type="Resource" id="Resource_s4tyb"]
+script = ExtResource("2_48vp3")
+message_speaker_id = "PS"
+message_text = "Shouldn't you be working on defusing that bomb, detective?"
+
+[sub_resource type="Resource" id="Resource_pps0h"]
+script = ExtResource("2_48vp3")
+message_speaker_id = "PS"
+message_text = "I wonder how many times you've repeated this by now."
+
+[sub_resource type="Resource" id="Resource_7pn4a"]
+script = ExtResource("2_48vp3")
+message_speaker_id = "PS"
+message_text = "Ha! Fun to think about. Not like I'll have to worry about it!"
+
+[sub_resource type="Resource" id="Resource_kswah"]
+script = ExtResource("4_f2ijm")
+position = Vector2(-560, -120)
+items = [SubResource("Resource_s4tyb"), SubResource("Resource_pps0h"), SubResource("Resource_7pn4a")]
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_uha0y"]
+script = ExtResource("5_vkpn8")
+sheet_id = "Peter Selkovitch"
+next_sequence_id = 1
+nodes = [SubResource("Resource_kswah")]
 
 [resource]
 script = ExtResource("1_giduu")
 sheets = {
-"Anne Acqanda": SubResource("v4udn"),
+"Anne Acqanda": SubResource("Resource_bkkvj"),
 "Donald Tuff": SubResource("cc61g"),
-"Geoff Sterling": SubResource("wspnu"),
+"Geoff Sterling": SubResource("Resource_4qw0o"),
 "Henry Callinger": SubResource("uslxw"),
 "Jeremy Femurspyne": SubResource("Resource_0401h"),
 "Karen Soiree": SubResource("Resource_gvup7"),
 "Margaret Vinewaters": SubResource("Resource_uno3w"),
 "Maria Caloz": SubResource("uj1nl"),
+"Peter Selkovitch": SubResource("Resource_uha0y"),
 "Randolph Ferguson": SubResource("Resource_6twqy"),
 "testing_sheet_1": SubResource("Resource_6yf53")
 }

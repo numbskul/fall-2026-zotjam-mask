@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cixuu1umjbp3k" path="res://scenes/dynamic_mask.tscn" id="1_nm0ya"]
 [ext_resource type="Script" uid="uid://c7a32rtqhkhs8" path="res://scripts/gameplay_ui.gd" id="1_wf0n7"]
+[ext_resource type="FontFile" uid="uid://dlni8k6x8yshq" path="res://assets/resources/monogram.ttf" id="3_bcwfe"]
 
 [node name="Gameplay UI" type="Control" unique_id=360624764]
 layout_mode = 3
@@ -47,5 +48,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_bcwfe")
+theme_override_font_sizes/font_size = 24
 text = "2:00"
 horizontal_alignment = 1

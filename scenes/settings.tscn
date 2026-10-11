@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://coit3u0mog7g5"]
 
+[ext_resource type="Script" uid="uid://uc3t57w80w31" path="res://scenes/settings.gd" id="1_r6d6q"]
+[ext_resource type="FontFile" uid="uid://djr3d7r7h7615" path="res://PixNull.ttf" id="2_6wm04"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwo76"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4mfi"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_es4n0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gis3k"]
+bg_color = Color(1, 0.83137256, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_83j8s"]
 
 [node name="Settings" type="Control" unique_id=2136593017]
 layout_mode = 3
@@ -10,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r6d6q")
 
 [node name="Main Background" type="Panel" parent="." unique_id=1823947326]
 layout_mode = 1
@@ -18,10 +32,49 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.0
-offset_top = -178.0
-offset_right = 320.0
-offset_bottom = 183.0
+offset_left = -160.0
+offset_top = -91.0
+offset_right = 161.0
+offset_bottom = 90.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jwo76")
+
+[node name="Back Button" type="Button" parent="." unique_id=846022164]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -34.0
+offset_right = 28.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.7921569, 1, 1)
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_f4mfi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_es4n0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gis3k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_83j8s")
+text = "Back"
+
+[node name="Settings Title" type="Label" parent="." unique_id=197632493]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_right = 76.5
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
