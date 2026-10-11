@@ -36,8 +36,6 @@ func _on_main_timer_timeout() -> void:
 
 func _on_player_restart_loop() -> void:
 	animation_player.play("restart_loop_fade_out")
-	timer.stop()
-
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "restart_loop_fade_out":
