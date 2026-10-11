@@ -20,7 +20,6 @@ texture = ExtResource("1_fwk40")
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=31355611]
-visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=194201354]
 layout_mode = 3
@@ -97,7 +96,7 @@ text = ">"
 layout_mode = 2
 
 [node name="DynamicMask" parent="CanvasLayer/Control/CenterContainer/Control" unique_id=67157889 instance=ExtResource("2_ahtaw")]
-scale = Vector2(1.2, 1.2)
+scale = Vector2(2.5, 2.5)
 
 [node name="Control" type="Control" parent="CanvasLayer/Control" unique_id=2040657179]
 layout_mode = 1

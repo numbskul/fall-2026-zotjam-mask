@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk5jjl1m5gj5t"
-path="res://.godot/imported/mask_programmer_art_spritesheet.png-04264c5daf6d177c7c0b030fd79b35c2.ctex"
+uid="uid://dlynkjmo3cgtu"
+path="res://.godot/imported/mask_ui.png-21d6e6d54c8bf336dfe47c32fd06126a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/mask_programmer_art_spritesheet.png"
-dest_files=["res://.godot/imported/mask_programmer_art_spritesheet.png-04264c5daf6d177c7c0b030fd79b35c2.ctex"]
+source_file="res://assets/art/UI/mask_ui.png"
+dest_files=["res://.godot/imported/mask_ui.png-21d6e6d54c8bf336dfe47c32fd06126a.ctex"]
 
 [params]
 
