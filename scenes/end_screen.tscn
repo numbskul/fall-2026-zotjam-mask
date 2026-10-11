@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dbkbejdijb17w"]
+[gd_scene format=3 uid="uid://ybhnyuigtrcf"]
 
-[ext_resource type="Script" path="res://scripts/end_screen.gd" id="1_6e1uj"]
+[ext_resource type="Script" uid="uid://ctghlbwfka8tc" path="res://scripts/end_screen.gd" id="1_6e1uj"]
 [ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_jc7ji"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf5fn"]
