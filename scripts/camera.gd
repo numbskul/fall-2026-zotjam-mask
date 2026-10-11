@@ -19,7 +19,7 @@ func enter_room(room: Area2D, pos: Vector2):
 	lock_position = pos
 
 func exit_room(room: Area2D):
-	#unlock if we leave
+	#unlock if we leave, this has to happen before moving in a new room if there is one
 	if current_room == room:
 		current_room = null
-		locked = false
+		#locked = false

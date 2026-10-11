@@ -25,7 +25,7 @@ shape = SubResource("RectangleShape2D_gi4cx")
 [node name="Lockpoint" type="Node2D" parent="Room1" unique_id=81750511]
 
 [node name="Room2" type="Area2D" parent="." unique_id=80302181 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(320, 0)
+position = Vector2(330, 0)
 script = ExtResource("5_c01mt")
 camera_controller = NodePath("../Camera2D")
 lock_point = NodePath("Lockpoint")
@@ -39,7 +39,7 @@ shape = SubResource("RectangleShape2D_gi4cx")
 [node name="Lockpoint" type="Node2D" parent="Room2" unique_id=372970660]
 
 [node name="Room3" type="Area2D" parent="." unique_id=1953676981 node_paths=PackedStringArray("camera_controller", "lock_point")]
-position = Vector2(-320, 0)
+position = Vector2(-330, 0)
 script = ExtResource("5_c01mt")
 camera_controller = NodePath("../Camera2D")
 lock_point = NodePath("Lockpoint")
@@ -52,8 +52,21 @@ shape = SubResource("RectangleShape2D_gi4cx")
 
 [node name="Lockpoint" type="Node2D" parent="Room3" unique_id=480228777]
 
-[node name="CharacterBody2D" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
-timer = NodePath("../Timer")
+[node name="Room4" type="Area2D" parent="." unique_id=1002171796 node_paths=PackedStringArray("camera_controller", "lock_point")]
+position = Vector2(0, -190)
+script = ExtResource("5_c01mt")
+camera_controller = NodePath("../Camera2D")
+lock_point = NodePath("Lockpoint")
+
+[node name="Sprite2D" type="Sprite2D" parent="Room4" unique_id=2125760668]
+texture = ExtResource("1_vcsgt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Room4" unique_id=284979272]
+shape = SubResource("RectangleShape2D_gi4cx")
+
+[node name="Lockpoint" type="Node2D" parent="Room4" unique_id=1205089213]
+
+[node name="CharacterBody2D" parent="." unique_id=1861419166 instance=ExtResource("1_elqb8")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
 script = ExtResource("4_vcsgt")
