@@ -90,7 +90,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
 			journal.add_entry(id)
-			# dynamic_mask.set_mask(GREEN_MASK)
+			dynamic_mask.set_mask(GREEN_MASK)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and current_state == STATES.TALKING:
