@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dp4wkopjru6so"]
+
+[ext_resource type="Texture2D" uid="uid://dcvc3bt15r30k" path="res://assets/art/character_sprites/Anne Acqanda.png" id="1_ennui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvbjk"]
+atlas = ExtResource("1_ennui")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwlx8"]
+atlas = ExtResource("1_ennui")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3faka"]
+atlas = ExtResource("1_ennui")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rd6b"]
+atlas = ExtResource("1_ennui")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvbjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwlx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3faka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rd6b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

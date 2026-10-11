@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d2yybb0b5n6xg"]
+
+[ext_resource type="Texture2D" uid="uid://4g2rp6l6tnwo" path="res://assets/art/character_sprites/Jeremy Femurspyne.png" id="1_nifs2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61dl4"]
+atlas = ExtResource("1_nifs2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6l3b"]
+atlas = ExtResource("1_nifs2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bauu"]
+atlas = ExtResource("1_nifs2")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo28o"]
+atlas = ExtResource("1_nifs2")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61dl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6l3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bauu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo28o")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

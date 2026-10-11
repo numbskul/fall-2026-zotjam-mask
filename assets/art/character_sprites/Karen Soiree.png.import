@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk5jjl1m5gj5t"
-path="res://.godot/imported/mask_programmer_art_spritesheet.png-04264c5daf6d177c7c0b030fd79b35c2.ctex"
+uid="uid://ba7xl6y5dw2gf"
+path="res://.godot/imported/Karen Soiree.png-e8a5c8d43e630a53a48294e85a5fa3e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/mask_programmer_art_spritesheet.png"
-dest_files=["res://.godot/imported/mask_programmer_art_spritesheet.png-04264c5daf6d177c7c0b030fd79b35c2.ctex"]
+source_file="res://assets/art/character_sprites/Karen Soiree.png"
+dest_files=["res://.godot/imported/Karen Soiree.png-e8a5c8d43e630a53a48294e85a5fa3e8.ctex"]
 
 [params]
 

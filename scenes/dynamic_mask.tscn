@@ -5,7 +5,6 @@
 
 [node name="DynamicMask" type="AnimatedSprite2D" unique_id=67157889]
 texture_filter = 3
-scale = Vector2(0.25, 0.25)
 sprite_frames = ExtResource("1_q3t5b")
 animation = &"Mask"
 script = ExtResource("2_iuf2e")
@@ -14,7 +13,6 @@ script = ExtResource("2_iuf2e")
 modulate = Color(0, 0, 0, 1)
 sprite_frames = ExtResource("1_q3t5b")
 animation = &"Emblem"
-frame = 1
 
 [node name="Eyes" type="AnimatedSprite2D" parent="." unique_id=1523313062]
 modulate = Color(0, 0, 0, 1)

@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cveg8ly2vtmf"]
+
+[ext_resource type="Texture2D" uid="uid://qeutjocqk45" path="res://assets/art/character_sprites/Randolph Ferguson.png" id="1_yfscn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cggey"]
+atlas = ExtResource("1_yfscn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk24x"]
+atlas = ExtResource("1_yfscn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqktn"]
+atlas = ExtResource("1_yfscn")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqmmw"]
+atlas = ExtResource("1_yfscn")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cggey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk24x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqktn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqmmw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
