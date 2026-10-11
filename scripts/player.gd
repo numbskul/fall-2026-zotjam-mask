@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 	gameplay_ui.set_mask_visible(current_state == STATES.MOVING || current_state == STATES.IDLE)
 	gameplay_ui.update_timer_label(timer.time_left)
 	gameplay_ui.update_mask(PlayerMaskData.mask_dict)
-	print(current_state, current_facing)
 	
 func _physics_process(delta: float) -> void:
 	var direction : Vector2 = get_movement_input()
