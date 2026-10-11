@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://did63icexm7j3"]
+
+[ext_resource type="Script" uid="uid://bhlun7cka0g8o" path="res://scripts/journal.gd" id="1_shkwb"]
+
+[node name="Journal" type="CanvasLayer" unique_id=793508088]
+script = ExtResource("1_shkwb")
+
+[node name="Control" type="Control" parent="." unique_id=1633835559]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=2114320819]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Entries" type="VBoxContainer" parent="Control/Panel" unique_id=304014529]
+layout_mode = 0
+offset_left = 17.0
+offset_right = 17.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/Panel/Entries" unique_id=1147546167]
+layout_mode = 2
+text = "Journal"
+
+[node name="ItemList" type="ItemList" parent="Control/Panel/Entries" unique_id=2041479723]
+layout_mode = 2
+select_mode = 1
+allow_reselect = true

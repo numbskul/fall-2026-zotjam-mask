@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-@onready var journal: CanvasLayer = $Journal
 @onready var gameplay_ui: Control = $"Gameplay UI"
 @onready var dialogue_overlay: Control = $DialogueOverlay
 @onready var player_interaction_range: Area2D = $PlayerInteractionRange
 @export var movement_speed = 96.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+@export var journal: Journal
 @export var timer : Timer
 
 enum FACINGS {UP, DOWN, LEFT, RIGHT}
@@ -95,7 +95,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
 			journal.add_entry(id)
-			dynamic_mask.set_mask(GREEN_MASK)
+			# dynamic_mask.set_mask(GREEN_MASK)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and current_state == STATES.TALKING:

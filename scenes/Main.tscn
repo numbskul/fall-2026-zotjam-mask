@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bjwod8ftljqvt" path="res://scenes/mask_changer.tscn" id="6_c01mt"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
 [ext_resource type="SpriteFrames" uid="uid://bxjbq20b03wnk" path="res://assets/art/character_spriteframes/Donald Tuff.tres" id="6_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://did63icexm7j3" path="res://scenes/Journal.tscn" id="9_q8u5g"]
 
 [sub_resource type="Curve" id="Curve_v4udn"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8930348, 0.17534244), 0.40242338, 1.6053864, 0, 0, Vector2(0.98507464, 0.9917808), 11.289005, 0.0, 0, 0]
@@ -81,8 +82,9 @@ shape = SubResource("RectangleShape2D_gi4cx")
 
 [node name="StartPosition" type="Marker2D" parent="Node2D" unique_id=2127542161]
 
-[node name="Player" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
+[node name="Player" parent="." unique_id=1861419166 node_paths=PackedStringArray("journal", "timer") instance=ExtResource("1_elqb8")]
 position = Vector2(-64, 10)
+journal = NodePath("../Journal")
 timer = NodePath("../Timer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
@@ -101,6 +103,8 @@ autostart = true
 
 [node name="Mask Changer" parent="." unique_id=54939292 instance=ExtResource("6_c01mt")]
 position = Vector2(112, -58)
+
+[node name="Journal" parent="." unique_id=793508088 instance=ExtResource("9_q8u5g")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1776147275]
 layer = 500
