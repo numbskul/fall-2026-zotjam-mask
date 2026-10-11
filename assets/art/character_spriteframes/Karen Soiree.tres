@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bv20noyhokont"]
+
+[ext_resource type="Texture2D" uid="uid://ba7xl6y5dw2gf" path="res://assets/art/character_sprites/Karen Soiree.png" id="1_m840g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djwya"]
+atlas = ExtResource("1_m840g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvlmv"]
+atlas = ExtResource("1_m840g")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o55e"]
+atlas = ExtResource("1_m840g")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aebet"]
+atlas = ExtResource("1_m840g")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djwya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvlmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0o55e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aebet")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

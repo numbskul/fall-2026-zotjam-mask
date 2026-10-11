@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cxsj5qdo1ahp8"]
+
+[ext_resource type="Texture2D" uid="uid://cw5bvp8tolufg" path="res://assets/art/character_sprites/Henry Callinger.png" id="1_jv3mp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxt7n"]
+atlas = ExtResource("1_jv3mp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdl5n"]
+atlas = ExtResource("1_jv3mp")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56ngc"]
+atlas = ExtResource("1_jv3mp")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmb2l"]
+atlas = ExtResource("1_jv3mp")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxt7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdl5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56ngc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmb2l")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

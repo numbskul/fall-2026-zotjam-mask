@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bpr7ybfk60ewn"]
+
+[ext_resource type="Texture2D" uid="uid://ckxkror88ho5a" path="res://assets/art/character_sprites/Geoff Sterling.png" id="1_jneqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qrl8"]
+atlas = ExtResource("1_jneqh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mivry"]
+atlas = ExtResource("1_jneqh")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik0lv"]
+atlas = ExtResource("1_jneqh")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdxdb"]
+atlas = ExtResource("1_jneqh")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qrl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mivry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik0lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdxdb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

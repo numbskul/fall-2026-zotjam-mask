@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://yt4osn3uaebq" path="res://scripts/room.gd" id="5_c01mt"]
 [ext_resource type="PackedScene" uid="uid://bjwod8ftljqvt" path="res://scenes/mask_changer.tscn" id="6_c01mt"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
+[ext_resource type="SpriteFrames" uid="uid://bxjbq20b03wnk" path="res://assets/art/character_spriteframes/Donald Tuff.tres" id="6_nxtc6"]
 
 [sub_resource type="Curve" id="Curve_v4udn"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8930348, 0.17534244), 0.40242338, 1.6053864, 0, 0, Vector2(0.98507464, 0.9917808), 11.289005, 0.0, 0, 0]
@@ -91,6 +92,7 @@ target = NodePath("../Player")
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
 position = Vector2(-122, -53)
 dialog_id = "testing_sheet_1"
+spritesheet = ExtResource("6_nxtc6")
 
 [node name="Timer" type="Timer" parent="." unique_id=344907707]
 wait_time = 20.0

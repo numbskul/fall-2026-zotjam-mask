@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dfp48neov4s8c"]
+
+[ext_resource type="Texture2D" uid="uid://nspj8k3pk6kd" path="res://assets/art/character_sprites/Peter Selkovich.png" id="1_4l3vv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv78h"]
+atlas = ExtResource("1_4l3vv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n8xq"]
+atlas = ExtResource("1_4l3vv")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wlns"]
+atlas = ExtResource("1_4l3vv")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl2vt"]
+atlas = ExtResource("1_4l3vv")
+region = Rect2(0, 96, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rv78h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n8xq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wlns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl2vt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]

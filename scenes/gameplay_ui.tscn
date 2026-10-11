@@ -18,9 +18,13 @@ script = ExtResource("1_wf0n7")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
+offset_left = -51.0
+offset_bottom = 49.0
 grow_horizontal = 0
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 3
 
 [node name="Control" type="Control" parent="CanvasLayer/MarginContainer" unique_id=258414811]
 layout_mode = 2
@@ -28,7 +32,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="DynamicMask" parent="CanvasLayer/MarginContainer/Control" unique_id=67157889 instance=ExtResource("1_nm0ya")]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(1.5, 1.5)
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=2102812943]
 offset_right = 52.0
