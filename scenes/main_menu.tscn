@@ -1,20 +1,13 @@
 [gd_scene format=3 uid="uid://dsu3f6vjtnwwv"]
 
 [ext_resource type="Script" uid="uid://du4b3gd5c7tj1" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Texture2D" uid="uid://d1nuotnmk06a6" path="res://assets/art/backgrounds/main_room.png" id="2_bqqt6"]
 [ext_resource type="FontFile" uid="uid://djr3d7r7h7615" path="res://PixNull.ttf" id="2_ekxnf"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fl4st"]
-texture = ExtResource("2_bqqt6")
-modulate_color = Color(0.55455434, 0.55455387, 0.5545541, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gi4cx"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7irk"]
 bg_color = Color(1, 1, 1, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 0.83137256, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
 
@@ -25,21 +18,11 @@ bg_color = Color(1, 0.83137256, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4udn"]
 bg_color = Color(1, 1, 1, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3ulh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxb6r"]
 bg_color = Color(1, 0.6, 0.6, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kur6e"]
 
@@ -70,7 +53,7 @@ offset_right = 317.50397
 offset_bottom = 178.97476
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_fl4st")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gi4cx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=478915670]
 layout_mode = 1
@@ -163,44 +146,8 @@ offset_right = 51.0
 offset_bottom = -130.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 10
-theme_override_constants/shadow_offset_y = 10
-theme_override_fonts/font = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 65
-text = "[Masquerade Game]"
-
-[node name="Controls List" type="Label" parent="." unique_id=351814231]
-layout_mode = 0
-offset_left = -273.8472
-offset_top = -63.63548
-offset_right = -233.8472
-offset_bottom = -40.63548
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_fonts/font = ExtResource("2_ekxnf")
-text = "Controls:
-
-Movement: W, A, S, D
-Interact: E
-Restart: R
-"
-
-[node name="Label" type="Label" parent="." unique_id=1257126532]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -50.0
-offset_top = -111.36209
-offset_right = 50.0
-offset_bottom = -88.36209
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_ekxnf")
-text = "Fall Zotjam 2026"
+text = "[Mask Game]"
 
 [connection signal="pressed" from="VBoxContainer/Begin Button" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]

@@ -9,7 +9,6 @@ extends Node
 @onready var mask_changer: Node2D = $"Mask Changer"
 @export var screenshake_intensity := 0.0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -40,7 +39,6 @@ func _on_player_restart_loop() -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "restart_loop_fade_out":
-		audio_stream_player.seek(0.0)
 		timer.start(0)
 		mask_changer.close_ui(false)
 		PlayerMaskData.reset_mask()
