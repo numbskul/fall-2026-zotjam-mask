@@ -27,5 +27,3 @@ position = Vector2(468.50006, 390)
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("3_0bbpv")]
 position = Vector2(-218, -150)
 dialog_id = "1_start_here"
-
-[node name="test" type="Sprite2D" parent="." unique_id=633778378]
