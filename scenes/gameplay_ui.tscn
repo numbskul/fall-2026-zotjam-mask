@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://uprcvuc7ppdn"]
 
 [ext_resource type="PackedScene" uid="uid://cixuu1umjbp3k" path="res://scenes/dynamic_mask.tscn" id="1_nm0ya"]
-[ext_resource type="Script" uid="uid://c7a32rtqhkhs8" path="res://scenes/gameplay_ui.gd" id="1_wf0n7"]
+[ext_resource type="Script" uid="uid://c7a32rtqhkhs8" path="res://scripts/gameplay_ui.gd" id="1_wf0n7"]
 
 [node name="Gameplay UI" type="Control" unique_id=360624764]
 layout_mode = 3

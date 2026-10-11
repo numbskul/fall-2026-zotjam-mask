@@ -18,6 +18,7 @@ config/icon="res://assets/art/icon.svg"
 [autoload]
 
 MadTalkGlobals="*uid://domdph40m3s8i"
+PlayerMaskData="*uid://dtm8l3q0l1jdh"
 
 [display]
 

@@ -12,18 +12,15 @@ enum STATES {IDLE, MOVING, TALKING}
 var current_facing := FACINGS.DOWN
 var current_state := STATES.IDLE
 
-signal change_mask(new_resource : MaskResource)
-
-const GREEN_MASK = preload("uid://cdb2xy2e2qx4w")
-var mask : MaskResource = MaskResource.new()
 @onready var dynamic_mask: AnimatedSprite2D = $DynamicMask
 
 func _ready() -> void:
-	emit_signal("change_mask", mask)
+	pass
 
 func _process(delta: float) -> void:
 	gameplay_ui.set_mask_visible(current_state != STATES.TALKING)
 	gameplay_ui.update_timer_label(timer.time_left)
+	gameplay_ui.update_mask(PlayerMaskData.mask_dict)
 	
 func _physics_process(delta: float) -> void:
 	var direction : Vector2 = get_movement_input()
@@ -63,6 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			if object.get_parent().is_in_group("npc"):
 				id = object.get_parent().get_dialog_id()
 				break
+			elif object.get_parent().is_in_group("mask_changer"):
+				pass
 		if id != "":
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
@@ -70,24 +69,6 @@ func _unhandled_input(event: InputEvent) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept") and current_state == STATES.TALKING:
 		dialogue_overlay.continue_dialog()
-	
-	
-	if event.is_action_pressed("1"):
-		mask.emblem_shape = (mask.emblem_shape + 1) % 4 as MaskResource.EMBLEM_SHAPE
-	elif event.is_action_pressed("2"):
-		mask.eye_shape = (mask.eye_shape + 1) % 4 as MaskResource.EYE_SHAPE
-	elif event.is_action_pressed("3"):
-		mask.mouth_shape = (mask.mouth_shape + 1) % 4 as MaskResource.MOUTH_SHAPE
-	elif event.is_action_pressed("4"):
-		mask.emblem_color = (mask.emblem_color + 1) % 4 as MaskResource.EMBLEM_COLOR
-	elif event.is_action_pressed("5"):
-		mask.eye_color = (mask.eye_color + 1) % 4 as MaskResource.EYE_COLOR
-	elif event.is_action_pressed("6"):
-		mask.mouth_color = (mask.mouth_color + 1) % 4 as MaskResource.MOUTH_COLOR
-	mask.update_mask_dict()
-	for variable in mask.mask_dict:
-		MadTalkGlobals.set_variable(variable, str(mask.mask_dict[variable]))
-	emit_signal("change_mask", mask)
 
 func _on_dialogue_overlay_dialog_finished() -> void:
 	current_state = STATES.IDLE

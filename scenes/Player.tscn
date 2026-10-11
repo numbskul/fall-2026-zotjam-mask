@@ -31,7 +31,4 @@ shape = SubResource("ConvexPolygonShape2D_g4v7s")
 
 [node name="Gameplay UI" parent="." unique_id=360624764 instance=ExtResource("5_qu4a1")]
 
-[connection signal="change_mask" from="." to="Gameplay UI/CanvasLayer/MarginContainer/Control/DynamicMask" method="set_mask"]
 [connection signal="dialog_finished" from="DialogueOverlay" to="." method="_on_dialogue_overlay_dialog_finished"]
-
-[editable path="Gameplay UI"]
