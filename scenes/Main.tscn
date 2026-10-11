@@ -4,9 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dwmopjv77t5mp" path="res://assets/art/room_size.png" id="1_vcsgt"]
 [ext_resource type="Script" uid="uid://dax666j42iw2l" path="res://scripts/camera.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://yt4osn3uaebq" path="res://scripts/room.gd" id="5_c01mt"]
-[ext_resource type="PackedScene" uid="uid://bjwod8ftljqvt" path="res://scenes/mask_changer.tscn" id="6_c01mt"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
-[ext_resource type="SpriteFrames" uid="uid://bxjbq20b03wnk" path="res://assets/art/character_spriteframes/Donald Tuff.tres" id="6_nxtc6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gi4cx"]
 size = Vector2(320, 180)
@@ -68,8 +66,7 @@ shape = SubResource("RectangleShape2D_gi4cx")
 
 [node name="Lockpoint" type="Node2D" parent="Room4" unique_id=1205089213]
 
-[node name="CharacterBody2D" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
-timer = NodePath("../Timer")
+[node name="CharacterBody2D" parent="." unique_id=1861419166 instance=ExtResource("1_elqb8")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
 script = ExtResource("4_vcsgt")
@@ -77,15 +74,4 @@ target = NodePath("../CharacterBody2D")
 
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
 position = Vector2(-122, -53)
-dialog_id = "testing_sheet_1"
-spritesheet = ExtResource("6_nxtc6")
-
-[node name="Timer" type="Timer" parent="." unique_id=344907707]
-wait_time = 120.0
-one_shot = true
-autostart = true
-
-[node name="Mask Changer" parent="." unique_id=54939292 instance=ExtResource("6_c01mt")]
-position = Vector2(112, -58)
-
-[connection signal="timeout" from="Timer" to="CharacterBody2D" method="_on_game_timer_timeout"]
+dialog_id = "1_start_here"
