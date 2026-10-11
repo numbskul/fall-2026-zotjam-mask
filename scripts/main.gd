@@ -7,15 +7,19 @@ extends Node
 @export var fade_to_white_curve : Curve
 @onready var color_rect: ColorRect = $CanvasLayer/ColorRect
 @onready var mask_changer: Node2D = $"Mask Changer"
+@export var screenshake_intensity := 0.0
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 func _ready() -> void:
 	player.global_position = start_position.global_position
 
-func _process(delta: float) -> void:
-	if timer.time_left < 15:
-		screenshake(remap(timer.time_left, 15, 0, 0, 1))
-	if timer.time_left < 5:
-		fade_to_white(remap(timer.time_left, 5, 0, 0, 1))
+func _process(delta: float) -> void:		
+	if timer.time_left <= 15:
+		if !animation_player.is_playing():
+			animation_player.play("bomb_explodes")
+		screenshake(screenshake_intensity)
+		
 	
 func screenshake(intensity : float) -> void:
 	var rand_x := randf_range(intensity, 2 * intensity)
@@ -31,7 +35,12 @@ func _on_main_timer_timeout() -> void:
 
 
 func _on_player_restart_loop() -> void:
-	mask_changer.close_ui(false)
-	PlayerMaskData.reset_mask()
-	player.global_position = start_position.global_position
-	timer.start(0)
+	animation_player.play("restart_loop_fade_out")
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "restart_loop_fade_out":
+		timer.start(0)
+		mask_changer.close_ui(false)
+		PlayerMaskData.reset_mask()
+		player.global_position = start_position.global_position
+		animation_player.play("restart_loop_fade_in")
