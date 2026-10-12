@@ -75,13 +75,14 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -110.0
-offset_top = 59.0
-offset_right = 111.0
-offset_bottom = 82.0
+offset_left = -133.0
+offset_top = 45.0
+offset_right = 134.0
+offset_bottom = 80.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_6wm04")
-text = "Jake, Matthew, Jitian, Miro, Ronan, Spencer"
+text = "Jake, Matthew, Jitian, Miro, Ronan, Spencer 
+             (More info on itch.io page)"
 
 [node name="Label3" type="Label" parent="." unique_id=1287770164]
 layout_mode = 0
