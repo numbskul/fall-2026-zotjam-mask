@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://bjh5oert53p2n" path="res://assets/art/backgrounds/top_room.png" id="6_mwfav"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
 [ext_resource type="SpriteFrames" uid="uid://bxjbq20b03wnk" path="res://assets/art/character_spriteframes/Donald Tuff.tres" id="6_nxtc6"]
+[ext_resource type="PackedScene" uid="uid://did63icexm7j3" path="res://scenes/Journal.tscn" id="9_q8u5g"]
+[ext_resource type="Script" uid="uid://dvn7hy8bkhs8f" path="res://scripts/bomb.gd" id="10_lhr70"]
+[ext_resource type="Texture2D" uid="uid://cyktfq631sy68" path="res://assets/art/sprites/bomb.png" id="11_wp0k4"]
+[ext_resource type="PackedScene" uid="uid://b6kpq4tm3gh4d" path="res://scenes/bomb_defuse.tscn" id="12_bjd11"]
 [ext_resource type="SpriteFrames" uid="uid://dp4wkopjru6so" path="res://assets/art/character_spriteframes/Anne Acquanda.tres" id="12_bjd11"]
 [ext_resource type="SpriteFrames" uid="uid://bpr7ybfk60ewn" path="res://assets/art/character_spriteframes/Geoff Sterling.tres" id="13_ft6cd"]
 [ext_resource type="SpriteFrames" uid="uid://cordy3k5118fv" path="res://assets/art/character_spriteframes/Maria Caloz.tres" id="14_bb450"]
@@ -123,6 +127,8 @@ _data = {
 &"restart_loop_fade_out": SubResource("Animation_q8u5g")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fl4st"]
+size = Vector2(53, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad854"]
 size = Vector2(55, 160.5)
 
@@ -249,6 +255,22 @@ color = Color(1, 1, 1, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2015500026]
 libraries/ = SubResource("AnimationLibrary_lhr70")
 
+[node name="bomb" type="Area2D" parent="." unique_id=982230715]
+position = Vector2(0, -250)
+script = ExtResource("10_lhr70")
+
+[node name="Sprite2D" type="Sprite2D" parent="bomb" unique_id=353485117]
+texture_filter = 3
+texture = ExtResource("11_wp0k4")
+
+[node name="BombDefuse" parent="bomb" unique_id=1002395594 instance=ExtResource("12_bjd11")]
+visible = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bomb" unique_id=1219132054]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb/StaticBody2D" unique_id=589248072]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_fl4st")
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1624898360]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1057902985]

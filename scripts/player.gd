@@ -90,6 +90,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				gameplay_ui.set_mask_visible(false)
 				object.get_parent().open_ui()
 				break
+			elif object.get_parent().is_in_group("bomb"):
+				(object.get_parent() as Bomb).open_ui()
+				break
 		if id != "" && current_state != STATES.TALKING && current_state != STATES.CHANGING_MASK:
 			current_state = STATES.TALKING
 			dialogue_overlay.start(id)
