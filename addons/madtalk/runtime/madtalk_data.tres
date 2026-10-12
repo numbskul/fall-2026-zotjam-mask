@@ -667,6 +667,121 @@ sheet_description = "Testing how dialogue can change based on player vars"
 next_sequence_id = 3
 nodes = [SubResource("gi4cx"), SubResource("Resource_0mplr")]
 
+[sub_resource type="Resource" id="rovxk"]
+script = ExtResource("2_48vp3")
+message_text = "The bomb has exploded."
+
+[sub_resource type="Resource" id="83ge5"]
+script = ExtResource("2_48vp3")
+message_text = "You couldn't loop in time."
+
+[sub_resource type="Resource" id="llgon"]
+script = ExtResource("2_48vp3")
+message_text = "You, and everyone else, died in a massive fireball."
+
+[sub_resource type="Resource" id="qm5fg"]
+script = ExtResource("2_48vp3")
+message_text = "The end! Thanks for playing!"
+
+[sub_resource type="Resource" id="e3vqo"]
+script = ExtResource("4_f2ijm")
+position = Vector2(-120, -320)
+items = [SubResource("rovxk"), SubResource("83ge5"), SubResource("llgon"), SubResource("qm5fg")]
+continue_port_index = 0
+
+[sub_resource type="Resource" id="df6ff"]
+script = ExtResource("5_vkpn8")
+sheet_id = "lose_bomb"
+next_sequence_id = 1
+nodes = [SubResource("e3vqo")]
+
+[sub_resource type="Resource" id="Resource_tiiv5"]
+script = ExtResource("2_48vp3")
+message_text = "You defused the bomb in time, using your time travel abilities."
+
+[sub_resource type="Resource" id="Resource_uakif"]
+script = ExtResource("2_48vp3")
+message_text = "Unfortunately, the entire trap was a setup to showcase your abilities to the rich and powerful."
+
+[sub_resource type="Resource" id="Resource_f0gcp"]
+script = ExtResource("2_48vp3")
+message_text = "In the middle of celebrating your victory, you are thrown into handcuffs and into the back of a locked van."
+
+[sub_resource type="Resource" id="Resource_7lsnw"]
+script = ExtResource("2_48vp3")
+message_text = "Game Over
+Thanks fot playing!"
+
+[sub_resource type="Resource" id="Resource_hvdsk"]
+script = ExtResource("4_f2ijm")
+items = [SubResource("Resource_tiiv5"), SubResource("Resource_uakif"), SubResource("Resource_f0gcp"), SubResource("Resource_7lsnw")]
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_jp4jm"]
+script = ExtResource("5_vkpn8")
+sheet_id = "win_capture"
+next_sequence_id = 1
+nodes = [SubResource("Resource_hvdsk")]
+
+[sub_resource type="Resource" id="Resource_qtnka"]
+script = ExtResource("2_48vp3")
+message_text = "Wait."
+
+[sub_resource type="Resource" id="Resource_bkhx4"]
+script = ExtResource("2_48vp3")
+message_text = "You can time travel!"
+
+[sub_resource type="Resource" id="Resource_d0tsa"]
+script = ExtResource("2_48vp3")
+message_text = "You escape back into the past, and slip silently out of the mansion."
+
+[sub_resource type="Resource" id="Resource_s0amn"]
+script = ExtResource("2_48vp3")
+message_text = "You walk away slowly from a fireball of human traffickers, the mafia, and other evildoers."
+
+[sub_resource type="Resource" id="Resource_jl78q"]
+script = ExtResource("2_48vp3")
+message_text = "You win!
+Thanks for playing!"
+
+[sub_resource type="Resource" id="Resource_tbm1p"]
+script = ExtResource("4_f2ijm")
+items = [SubResource("Resource_qtnka"), SubResource("Resource_bkhx4"), SubResource("Resource_d0tsa"), SubResource("Resource_s0amn"), SubResource("Resource_jl78q")]
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_45srj"]
+script = ExtResource("5_vkpn8")
+sheet_id = "win_escape"
+next_sequence_id = 1
+nodes = [SubResource("Resource_tbm1p")]
+
+[sub_resource type="Resource" id="Resource_c3itg"]
+script = ExtResource("2_48vp3")
+message_text = "Shouldn't you be defusing a bomb, detective?"
+
+[sub_resource type="Resource" id="Resource_s4tyb"]
+script = ExtResource("2_48vp3")
+message_text = "I'd say you're running out of time, but that's not an issue for you, is it?"
+
+[sub_resource type="Resource" id="Resource_pps0h"]
+script = ExtResource("2_48vp3")
+message_text = "It's quite impressive. I hope you're not showing off to our guests too much."
+
+[sub_resource type="Resource" id="Resource_7pn4a"]
+script = ExtResource("2_48vp3")
+message_text = "I wonder how many times we've had this same conversation."
+
+[sub_resource type="Resource" id="Resource_kswah"]
+script = ExtResource("4_f2ijm")
+items = [SubResource("Resource_c3itg"), SubResource("Resource_s4tyb"), SubResource("Resource_pps0h"), SubResource("Resource_7pn4a")]
+continue_port_index = 0
+
+[sub_resource type="Resource" id="Resource_uha0y"]
+script = ExtResource("5_vkpn8")
+sheet_id = "Peter Selkovich"
+next_sequence_id = 1
+nodes = [SubResource("Resource_kswah")]
+
 [resource]
 script = ExtResource("1_giduu")
 sheets = {
@@ -678,6 +793,10 @@ sheets = {
 "Karen Soiree": SubResource("Resource_gvup7"),
 "Margaret Vinewaters": SubResource("Resource_uno3w"),
 "Maria Caloz": SubResource("uj1nl"),
+"Peter Selkovich": SubResource("Resource_uha0y"),
 "Randolph Ferguson": SubResource("Resource_6twqy"),
-"testing_sheet_1": SubResource("Resource_6yf53")
+"lose_bomb": SubResource("df6ff"),
+"testing_sheet_1": SubResource("Resource_6yf53"),
+"win_capture": SubResource("Resource_jp4jm"),
+"win_escape": SubResource("Resource_45srj")
 }

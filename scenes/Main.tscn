@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b8g6m4147uhro" path="res://scenes/Player.tscn" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://dlb6voim3x48f" path="res://scripts/main.gd" id="1_jlsqs"]
+[ext_resource type="AudioStream" uid="uid://iehp3ctr26d3" path="res://assets/audio/zotjammusicfall2026.mp3" id="2_lhr70"]
 [ext_resource type="Texture2D" uid="uid://d1nuotnmk06a6" path="res://assets/art/backgrounds/main_room.png" id="3_wp0k4"]
 [ext_resource type="Texture2D" uid="uid://d21hcxjgavdgt" path="res://assets/art/backgrounds/right_room.png" id="4_bjd11"]
 [ext_resource type="Script" uid="uid://dax666j42iw2l" path="res://scripts/camera.gd" id="4_vcsgt"]
@@ -11,13 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://bjh5oert53p2n" path="res://assets/art/backgrounds/top_room.png" id="6_mwfav"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
 [ext_resource type="SpriteFrames" uid="uid://bxjbq20b03wnk" path="res://assets/art/character_spriteframes/Donald Tuff.tres" id="6_nxtc6"]
-[ext_resource type="PackedScene" uid="uid://did63icexm7j3" path="res://scenes/Journal.tscn" id="9_q8u5g"]
 [ext_resource type="Script" uid="uid://dvn7hy8bkhs8f" path="res://scripts/bomb.gd" id="10_lhr70"]
 [ext_resource type="Texture2D" uid="uid://cyktfq631sy68" path="res://assets/art/sprites/bomb.png" id="11_wp0k4"]
-[ext_resource type="PackedScene" uid="uid://b6kpq4tm3gh4d" path="res://scenes/bomb_defuse.tscn" id="12_bjd11"]
 [ext_resource type="SpriteFrames" uid="uid://dp4wkopjru6so" path="res://assets/art/character_spriteframes/Anne Acquanda.tres" id="12_bjd11"]
 [ext_resource type="SpriteFrames" uid="uid://bpr7ybfk60ewn" path="res://assets/art/character_spriteframes/Geoff Sterling.tres" id="13_ft6cd"]
 [ext_resource type="SpriteFrames" uid="uid://cordy3k5118fv" path="res://assets/art/character_spriteframes/Maria Caloz.tres" id="14_bb450"]
+[ext_resource type="PackedScene" uid="uid://b6kpq4tm3gh4d" path="res://scenes/bomb_defuse.tscn" id="14_ebg2g"]
 [ext_resource type="SpriteFrames" uid="uid://d2yybb0b5n6xg" path="res://assets/art/character_spriteframes/Jeremy Femurspyne.tres" id="15_nfivy"]
 [ext_resource type="SpriteFrames" uid="uid://cveg8ly2vtmf" path="res://assets/art/character_spriteframes/Randolph Ferguson.tres" id="16_1nqs0"]
 [ext_resource type="SpriteFrames" uid="uid://bv20noyhokont" path="res://assets/art/character_spriteframes/Karen Soiree.tres" id="17_1iba3"]
@@ -53,6 +53,18 @@ tracks/1/path = NodePath(".:screenshake_intensity")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -102,6 +114,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_q8u5g"]
 resource_name = "restart_loop_fade_out"
@@ -118,6 +142,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lhr70"]
 _data = {
@@ -129,6 +165,7 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl4st"]
 size = Vector2(53, 24)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad854"]
 size = Vector2(55, 160.5)
 
@@ -233,7 +270,7 @@ dialog_id = "Donald Tuff"
 spritesheet = ExtResource("6_nxtc6")
 
 [node name="Timer" type="Timer" parent="." unique_id=344907707]
-wait_time = 20.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
@@ -255,15 +292,15 @@ color = Color(1, 1, 1, 0)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2015500026]
 libraries/ = SubResource("AnimationLibrary_lhr70")
 
-[node name="bomb" type="Area2D" parent="." unique_id=982230715]
-position = Vector2(0, -250)
+[node name="bomb" type="Node2D" parent="." unique_id=1080595000]
+position = Vector2(81, -199)
 script = ExtResource("10_lhr70")
 
 [node name="Sprite2D" type="Sprite2D" parent="bomb" unique_id=353485117]
 texture_filter = 3
 texture = ExtResource("11_wp0k4")
 
-[node name="BombDefuse" parent="bomb" unique_id=1002395594 instance=ExtResource("12_bjd11")]
+[node name="BombDefuse" parent="bomb" unique_id=1002395594 instance=ExtResource("14_ebg2g")]
 visible = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="bomb" unique_id=1219132054]
@@ -271,6 +308,7 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bomb/StaticBody2D" unique_id=589248072]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_fl4st")
+
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1624898360]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1057902985]
@@ -404,8 +442,13 @@ position = Vector2(-418, 14)
 dialog_id = "Henry Callinger"
 spritesheet = ExtResource("20_yxlcp")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1946572351]
+stream = ExtResource("2_lhr70")
+autoplay = true
+
 [connection signal="restart" from="Player" to="." method="_on_player_restart_loop"]
 [connection signal="timeout" from="Timer" to="." method="_on_main_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Player" method="_on_game_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="Player" method="_on_animation_player_animation_finished"]
+[connection signal="bomb_defused" from="bomb" to="." method="_on_bomb_bomb_defused"]

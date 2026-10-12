@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://brfvfkhpw76c7"]
+
+[ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_2l6cc"]
+
+[sub_resource type="GDScript" id="GDScript_wv5lq"]
+script/source = "extends Control
+
+@onready var node: Node = $Node
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	node.start_dialog(\"win_capture\")
+
+func _on_timer_timeout() -> void:
+	node.dialog_acknowledge()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"restart\"):
+		node.abort_dialogue()
+		node.start_dialogue(\"win_escape\")
+
+func _on_node_dialog_finished(sheet_name: Variant, sequence_id: Variant) -> void:
+	get_tree().change_scene_to_file(\"res://scenes/main_menu.tscn\")
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yf5fn"]
+
+[sub_resource type="Theme" id="Theme_g4v7s"]
+Panel/styles/panel = SubResource("StyleBoxEmpty_yf5fn")
+
+[node name="End Screen" type="Control" unique_id=521258527]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_wv5lq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1435593830]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Node" type="Node" parent="." unique_id=1069565714]
+script = ExtResource("2_2l6cc")
+DialogMainControl = NodePath("../Control")
+DialogMessageBox = NodePath("../Control/Panel")
+DialogMessageLabel = NodePath("../Control/Panel/MarginContainer/RichTextLabel")
+
+[node name="Control" type="Control" parent="." unique_id=869014260]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -41.0
+offset_right = 115.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1210749709]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_g4v7s")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Panel" unique_id=519762881]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/MarginContainer" unique_id=1461723379]
+layout_mode = 2
+text = "You won!
+We ran out of time for an ending"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1164009034]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

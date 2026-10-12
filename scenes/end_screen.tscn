@@ -65,8 +65,16 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/MarginContainer" unique_id=1461723379]
 layout_mode = 2
-text = "Text Here"
+text = "You Died.
+We ran out of time for an ending"
 fit_content = true
 scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1625057123]
+wait_time = 5.0
+autostart = true
+
+[connection signal="dialog_finished" from="Node" to="." method="_on_node_dialog_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -9,6 +9,7 @@ extends Node
 @onready var mask_changer: Node2D = $"Mask Changer"
 @export var screenshake_intensity := 0.0
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -31,6 +32,7 @@ func fade_to_white(progress : float) -> void:
 	color_rect.color.a = alpha
 
 func _on_main_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://scenes/end_screen.tscn")
 	pass # Replace with function body.
 
 
@@ -44,3 +46,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		PlayerMaskData.reset_mask()
 		player.global_position = start_position.global_position
 		animation_player.play("restart_loop_fade_in")
+		audio_stream_player.play(0)
+		
+
+
+func _on_bomb_bomb_defused() -> void:
+	timer.stop()
+	get_tree().change_scene_to_file("res://scenes/win_screen.tscn")
+	pass # Replace with function body.
