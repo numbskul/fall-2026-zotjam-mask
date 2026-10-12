@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://did63icexm7j3"]
 
 [ext_resource type="Script" uid="uid://bhlun7cka0g8o" path="res://scripts/journal.gd" id="1_shkwb"]
+[ext_resource type="Texture2D" uid="uid://detnqlyclvd5k" path="res://assets/art/UI/journal.png" id="2_imr2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nn5c6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fl4st"]
 
@@ -28,26 +31,32 @@ script = ExtResource("1_shkwb")
 layout_mode = 3
 anchors_preset = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=932942440]
+texture_filter = 3
+position = Vector2(148, 91)
+texture = ExtResource("2_imr2r")
+
 [node name="Panel" type="Panel" parent="Control" unique_id=2114320819]
 layout_mode = 0
 offset_left = 70.0
 offset_right = 253.0
 offset_bottom = 181.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nn5c6")
 
 [node name="Label" type="Label" parent="Control/Panel" unique_id=1147546167]
 layout_mode = 0
-offset_left = 63.0
-offset_top = -2.0
-offset_right = 121.0
-offset_bottom = 21.0
+offset_left = 65.0
+offset_top = 4.0
+offset_right = 123.0
+offset_bottom = 27.0
 text = "Journal"
 
 [node name="Entries" type="VBoxContainer" parent="Control/Panel" unique_id=304014529]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 21.0
-offset_right = 174.0
-offset_bottom = 174.0
+offset_left = 18.0
+offset_top = 27.0
+offset_right = 171.0
+offset_bottom = 126.0
 
 [node name="ItemList" type="ItemList" parent="Control/Panel/Entries" unique_id=2041479723]
 layout_mode = 2
