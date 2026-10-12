@@ -232,7 +232,7 @@ one_shot = true
 autostart = true
 
 [node name="Mask Changer" parent="." unique_id=54939292 instance=ExtResource("6_c01mt")]
-position = Vector2(112, -58)
+position = Vector2(110, -10)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1776147275]
 layer = 500

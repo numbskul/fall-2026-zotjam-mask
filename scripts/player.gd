@@ -113,5 +113,5 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		dialogue_overlay.abort()
 		current_state = STATES.IDLE
 
-#func _on_dialogue_overlay_dialog_finished(sheet_name: Variant, sequence_id: Variant) -> void:
-	#current_state = STATES.IDLE
+func _on_dialogue_overlay_dialog_finished(sheet_name: Variant, sequence_id: Variant) -> void:
+	current_state = STATES.IDLE
