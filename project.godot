@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fall 2026 Zotjam-Mask"
-run/main_scene="uid://cok8umbyeckie"
+run/main_scene="uid://dsu3f6vjtnwwv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/art/icon.svg"
 
