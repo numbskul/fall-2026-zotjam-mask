@@ -3,6 +3,68 @@
 [ext_resource type="Script" uid="uid://5oaqvqdovm4g" path="res://scripts/dialogue_overlay.gd" id="1_djv66"]
 [ext_resource type="Script" uid="uid://c6av3xe4m2ujl" path="res://addons/madtalk/runtime/madtalk_runtime.gd" id="2_utxks"]
 [ext_resource type="Texture2D" uid="uid://bettpx3vy2nm4" path="res://assets/art/icon.svg" id="3_28p24"]
+[ext_resource type="Script" uid="uid://crm8hyh7nn5vb" path="res://addons/madtalk/runtime/CharacterData.gd" id="3_32db6"]
+[ext_resource type="FontFile" uid="uid://clrmecal3q6kv" path="res://assets/resources/monogram.ttf" id="15_1epkh"]
+
+[sub_resource type="Resource" id="Resource_fl4st"]
+script = ExtResource("3_32db6")
+id = "AA"
+name = "Anne Acquanda"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_v4udn"]
+script = ExtResource("3_32db6")
+id = "DT"
+name = "Donald Tuff"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_kur6e"]
+script = ExtResource("3_32db6")
+id = "GS"
+name = "Geoff Sterling"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_gi4cx"]
+script = ExtResource("3_32db6")
+id = "HC"
+name = "Henry Callinger"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_mjnvi"]
+script = ExtResource("3_32db6")
+id = "JF"
+name = "Jeremy Femurspyne"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_6yf53"]
+script = ExtResource("3_32db6")
+id = "KS"
+name = "Karen Soiree"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_wspnu"]
+script = ExtResource("3_32db6")
+id = "MV"
+name = "Margaret Vinewater"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_0mplr"]
+script = ExtResource("3_32db6")
+id = "MC"
+name = "Maria Caloz"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_hkg3h"]
+script = ExtResource("3_32db6")
+id = "PS"
+name = "Peter Selkovich"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
+
+[sub_resource type="Resource" id="Resource_uwwod"]
+script = ExtResource("3_32db6")
+id = "RS"
+name = "Randolph Ferguson"
+metadata/_custom_type_script = "uid://crm8hyh7nn5vb"
 
 [node name="DialogOverlay" type="Control" unique_id=1751266484]
 layout_mode = 3
@@ -15,11 +77,10 @@ script = ExtResource("1_djv66")
 
 [node name="MadTalkRuntime" type="Node" parent="." unique_id=2127828774]
 script = ExtResource("2_utxks")
+ListOfCharacters = Array[ExtResource("3_32db6")]([SubResource("Resource_fl4st"), SubResource("Resource_v4udn"), SubResource("Resource_kur6e"), SubResource("Resource_gi4cx"), SubResource("Resource_mjnvi"), SubResource("Resource_6yf53"), SubResource("Resource_wspnu"), SubResource("Resource_0mplr"), SubResource("Resource_hkg3h"), SubResource("Resource_uwwod")])
 DialogMainControl = NodePath("../CanvasLayer/MarginContainer")
 DialogMessageBox = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/TextMargins/TextBoxPanel")
 DialogMessageLabel = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/TextMargins/TextBoxPanel/RichTextLabel")
-DialogButtonsMenu = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel")
-DialogButtonsContainer = NodePath("../CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel/ButtonContainer")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=622600937]
 
@@ -41,10 +102,22 @@ layout_mode = 2
 [node name="TextureMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox" unique_id=166921975]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins" unique_id=953960388]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins" unique_id=197487660]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins/VBoxContainer" unique_id=953960388]
+custom_minimum_size = Vector2(30, 30)
+custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("3_28p24")
 expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/TextureMargins/VBoxContainer" unique_id=1970418296]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_1epkh")
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DialogueMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox" unique_id=1285872903]
 layout_mode = 2
@@ -68,22 +141,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 5
-
-[node name="ButtonMargins" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer" unique_id=1135838135]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ButtonPanel" type="Panel" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins" unique_id=463073254]
-layout_mode = 2
-
-[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/WholePanelHBox/DialogueMargins/HBoxContainer/ButtonMargins/ButtonPanel" unique_id=1410580881]
-clip_contents = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
 
 [connection signal="dialog_finished" from="MadTalkRuntime" to="." method="_on_mad_talk_runtime_dialog_finished"]

@@ -2,16 +2,28 @@
 
 [ext_resource type="PackedScene" uid="uid://b8g6m4147uhro" path="res://scenes/Player.tscn" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://dlb6voim3x48f" path="res://scripts/main.gd" id="1_jlsqs"]
-[ext_resource type="Texture2D" uid="uid://dwmopjv77t5mp" path="res://assets/art/room_size.png" id="1_vcsgt"]
+[ext_resource type="Texture2D" uid="uid://d1nuotnmk06a6" path="res://assets/art/backgrounds/main_room.png" id="3_wp0k4"]
+[ext_resource type="Texture2D" uid="uid://d21hcxjgavdgt" path="res://assets/art/backgrounds/right_room.png" id="4_bjd11"]
 [ext_resource type="Script" uid="uid://dax666j42iw2l" path="res://scripts/camera.gd" id="4_vcsgt"]
 [ext_resource type="Script" uid="uid://yt4osn3uaebq" path="res://scripts/room.gd" id="5_c01mt"]
+[ext_resource type="Texture2D" uid="uid://cvh8qsskyaq0q" path="res://assets/art/backgrounds/left_room.png" id="5_qmy6f"]
 [ext_resource type="PackedScene" uid="uid://bjwod8ftljqvt" path="res://scenes/mask_changer.tscn" id="6_c01mt"]
+[ext_resource type="Texture2D" uid="uid://bjh5oert53p2n" path="res://assets/art/backgrounds/top_room.png" id="6_mwfav"]
 [ext_resource type="PackedScene" uid="uid://dntmb1lybdymg" path="res://scenes/npc.tscn" id="6_npc"]
 [ext_resource type="SpriteFrames" uid="uid://bxjbq20b03wnk" path="res://assets/art/character_spriteframes/Donald Tuff.tres" id="6_nxtc6"]
 [ext_resource type="PackedScene" uid="uid://did63icexm7j3" path="res://scenes/Journal.tscn" id="9_q8u5g"]
 [ext_resource type="Script" uid="uid://dvn7hy8bkhs8f" path="res://scripts/bomb.gd" id="10_lhr70"]
 [ext_resource type="Texture2D" uid="uid://cyktfq631sy68" path="res://assets/art/sprites/bomb.png" id="11_wp0k4"]
 [ext_resource type="PackedScene" uid="uid://b6kpq4tm3gh4d" path="res://scenes/bomb_defuse.tscn" id="12_bjd11"]
+[ext_resource type="SpriteFrames" uid="uid://dp4wkopjru6so" path="res://assets/art/character_spriteframes/Anne Acquanda.tres" id="12_bjd11"]
+[ext_resource type="SpriteFrames" uid="uid://bpr7ybfk60ewn" path="res://assets/art/character_spriteframes/Geoff Sterling.tres" id="13_ft6cd"]
+[ext_resource type="SpriteFrames" uid="uid://cordy3k5118fv" path="res://assets/art/character_spriteframes/Maria Caloz.tres" id="14_bb450"]
+[ext_resource type="SpriteFrames" uid="uid://d2yybb0b5n6xg" path="res://assets/art/character_spriteframes/Jeremy Femurspyne.tres" id="15_nfivy"]
+[ext_resource type="SpriteFrames" uid="uid://cveg8ly2vtmf" path="res://assets/art/character_spriteframes/Randolph Ferguson.tres" id="16_1nqs0"]
+[ext_resource type="SpriteFrames" uid="uid://bv20noyhokont" path="res://assets/art/character_spriteframes/Karen Soiree.tres" id="17_1iba3"]
+[ext_resource type="SpriteFrames" uid="uid://dfp48neov4s8c" path="res://assets/art/character_spriteframes/Peter Selkovich.tres" id="18_1nqs0"]
+[ext_resource type="SpriteFrames" uid="uid://bbcpqf33vpcre" path="res://assets/art/character_spriteframes/Margaret Vinewaters.tres" id="19_1iba3"]
+[ext_resource type="SpriteFrames" uid="uid://cxsj5qdo1ahp8" path="res://assets/art/character_spriteframes/Henry Callinger.tres" id="20_yxlcp"]
 
 [sub_resource type="Curve" id="Curve_v4udn"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.8930348, 0.17534244), 0.40242338, 1.6053864, 0, 0, Vector2(0.98507464, 0.9917808), 11.289005, 0.0, 0, 0]
@@ -117,6 +129,26 @@ _data = {
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fl4st"]
 size = Vector2(53, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad854"]
+size = Vector2(55, 160.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp0k4"]
+size = Vector2(387.5, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjd11"]
+size = Vector2(509.3125, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmy6f"]
+size = Vector2(545.375, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwfav"]
+size = Vector2(286.5, 160.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p2gp"]
+size = Vector2(90.5, 40.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvmbd"]
+size = Vector2(29.25, 100.125)
 
 [node name="Main" type="Node" unique_id=1482057672]
 script = ExtResource("1_jlsqs")
@@ -132,7 +164,8 @@ camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Room1" unique_id=249117252]
-texture = ExtResource("1_vcsgt")
+texture_filter = 3
+texture = ExtResource("3_wp0k4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room1" unique_id=1748131171]
 shape = SubResource("RectangleShape2D_gi4cx")
@@ -146,7 +179,8 @@ camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Room2" unique_id=936179183]
-texture = ExtResource("1_vcsgt")
+texture_filter = 3
+texture = ExtResource("4_bjd11")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room2" unique_id=1038123210]
 shape = SubResource("RectangleShape2D_gi4cx")
@@ -160,7 +194,8 @@ camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Room3" unique_id=1623591099]
-texture = ExtResource("1_vcsgt")
+texture_filter = 3
+texture = ExtResource("5_qmy6f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room3" unique_id=602740638]
 shape = SubResource("RectangleShape2D_gi4cx")
@@ -174,7 +209,8 @@ camera_controller = NodePath("../../Camera2D")
 lock_point = NodePath("Lockpoint")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D/Room4" unique_id=2125760668]
-texture = ExtResource("1_vcsgt")
+texture_filter = 3
+texture = ExtResource("6_mwfav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Room4" unique_id=284979272]
 shape = SubResource("RectangleShape2D_gi4cx")
@@ -183,9 +219,8 @@ shape = SubResource("RectangleShape2D_gi4cx")
 
 [node name="StartPosition" type="Marker2D" parent="Node2D" unique_id=2127542161]
 
-[node name="Player" parent="." unique_id=1861419166 node_paths=PackedStringArray("journal", "timer") instance=ExtResource("1_elqb8")]
+[node name="Player" parent="." unique_id=1861419166 node_paths=PackedStringArray("timer") instance=ExtResource("1_elqb8")]
 position = Vector2(-64, 10)
-journal = NodePath("../Journal")
 timer = NodePath("../Timer")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1014458473 node_paths=PackedStringArray("target")]
@@ -193,7 +228,7 @@ script = ExtResource("4_vcsgt")
 target = NodePath("../Player")
 
 [node name="NPC" parent="." unique_id=2068594920 instance=ExtResource("6_npc")]
-position = Vector2(-122, -53)
+position = Vector2(-240, -4)
 dialog_id = "Donald Tuff"
 spritesheet = ExtResource("6_nxtc6")
 
@@ -204,8 +239,6 @@ autostart = true
 
 [node name="Mask Changer" parent="." unique_id=54939292 instance=ExtResource("6_c01mt")]
 position = Vector2(112, -58)
-
-[node name="Journal" parent="." unique_id=793508088 instance=ExtResource("9_q8u5g")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1776147275]
 layer = 500
@@ -238,6 +271,138 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bomb/StaticBody2D" unique_id=589248072]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_fl4st")
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1624898360]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1057902985]
+visible = false
+position = Vector2(-462.5, 4.5)
+shape = SubResource("RectangleShape2D_ad854")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1019764321]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1820740214]
+visible = false
+position = Vector2(-239.75, -66)
+shape = SubResource("RectangleShape2D_wp0k4")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1034604139]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1556934245]
+visible = false
+position = Vector2(301.65625, -71)
+shape = SubResource("RectangleShape2D_bjd11")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=2096594400]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1139265721]
+visible = false
+position = Vector2(277, 134)
+shape = SubResource("RectangleShape2D_qmy6f")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1634430597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=1593817785]
+position = Vector2(-236.3125, 134)
+shape = SubResource("RectangleShape2D_qmy6f")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=565495683]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=684312803]
+position = Vector2(-518, 56)
+shape = SubResource("RectangleShape2D_ad854")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=591980631]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=2053557772]
+position = Vector2(518, 29.25)
+shape = SubResource("RectangleShape2D_ad854")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1091426568]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=180486120]
+position = Vector2(0, -290)
+shape = SubResource("RectangleShape2D_mwfav")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=1748915077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=366866129]
+position = Vector2(-164, -181)
+shape = SubResource("RectangleShape2D_ad854")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="." unique_id=240967771]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" unique_id=671279841]
+position = Vector2(164, -190)
+shape = SubResource("RectangleShape2D_ad854")
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="." unique_id=2078918183]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D11" unique_id=577086309]
+position = Vector2(-96.25, -124)
+shape = SubResource("RectangleShape2D_3p2gp")
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="." unique_id=1892351501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D12" unique_id=655565657]
+position = Vector2(96, -124)
+shape = SubResource("RectangleShape2D_3p2gp")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="." unique_id=1160431782]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D13" unique_id=1491201134]
+position = Vector2(-47.375, -78.0625)
+shape = SubResource("RectangleShape2D_cvmbd")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="." unique_id=1265082486]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D14" unique_id=1578347635]
+position = Vector2(47, -77)
+shape = SubResource("RectangleShape2D_cvmbd")
+
+[node name="NPC2" parent="." unique_id=951607106 instance=ExtResource("6_npc")]
+position = Vector2(-114, 1)
+dialog_id = "Anne Acqanda"
+spritesheet = ExtResource("12_bjd11")
+
+[node name="NPC3" parent="." unique_id=871320387 instance=ExtResource("6_npc")]
+position = Vector2(396, 10)
+dialog_id = "Geoff Sterling"
+spritesheet = ExtResource("13_ft6cd")
+
+[node name="NPC4" parent="." unique_id=275723888 instance=ExtResource("6_npc")]
+position = Vector2(244, 33)
+dialog_id = "Maria Caloz"
+spritesheet = ExtResource("14_bb450")
+
+[node name="NPC5" parent="." unique_id=1800368202 instance=ExtResource("6_npc")]
+position = Vector2(320, -9)
+dialog_id = "Jeremy Femurspyne"
+spritesheet = ExtResource("15_nfivy")
+
+[node name="NPC6" parent="." unique_id=585919972 instance=ExtResource("6_npc")]
+position = Vector2(-264, 63)
+dialog_id = "Randolph Ferguson"
+spritesheet = ExtResource("16_1nqs0")
+
+[node name="NPC7" parent="." unique_id=496105946 instance=ExtResource("6_npc")]
+position = Vector2(-380, -4)
+dialog_id = "Karen Soiree"
+spritesheet = ExtResource("17_1iba3")
+
+[node name="NPC8" parent="." unique_id=1439059134 instance=ExtResource("6_npc")]
+position = Vector2(-85, -186)
+dialog_id = "Peter Selkovich"
+spritesheet = ExtResource("18_1nqs0")
+
+[node name="NPC9" parent="." unique_id=836533302 instance=ExtResource("6_npc")]
+position = Vector2(397, 62)
+dialog_id = "Margaret Vinewaters"
+spritesheet = ExtResource("19_1iba3")
+
+[node name="NPC10" parent="." unique_id=1144528775 instance=ExtResource("6_npc")]
+position = Vector2(-418, 14)
+dialog_id = "Henry Callinger"
+spritesheet = ExtResource("20_yxlcp")
 
 [connection signal="restart" from="Player" to="." method="_on_player_restart_loop"]
 [connection signal="timeout" from="Timer" to="." method="_on_main_timer_timeout"]
