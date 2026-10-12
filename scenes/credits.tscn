@@ -1,20 +1,7 @@
 [gd_scene format=3 uid="uid://d20c4xltqlt8v"]
 
-[ext_resource type="Script" uid="uid://d2unu3yevl02a" path="res://scenes/credits.gd" id="1_2ckv8"]
-[ext_resource type="FontFile" uid="uid://djr3d7r7h7615" path="res://PixNull.ttf" id="2_0ctdu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yeqti"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwo76"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbfq"]
-bg_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gwij"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mah5v"]
-bg_color = Color(1, 0.83137256, 0, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kyhnv"]
 
 [node name="Credits" type="Control" unique_id=805394054]
 layout_mode = 3
@@ -23,19 +10,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2ckv8")
 
-[node name="Main Background" type="Panel" parent="." unique_id=781106384]
+[node name="Main Background" type="Panel" parent="." unique_id=591685180]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -161.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 91.0
+offset_left = -319.0
+offset_top = -178.0
+offset_right = 320.0
+offset_bottom = 183.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_yeqti")
@@ -124,3 +110,4 @@ Grande Tarantelle (1872) -
       L. M. Gottschalk."
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_jwo76")
