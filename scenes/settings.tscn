@@ -1,15 +1,46 @@
 [gd_scene format=3 uid="uid://coit3u0mog7g5"]
 
+[ext_resource type="FontFile" uid="uid://djr3d7r7h7615" path="res://PixNull.ttf" id="2_6wm04"]
+
+[sub_resource type="GDScript" id="GDScript_fl4st"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_credits_button_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/main_menu.tscn\")
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwo76"]
 bg_color = Color(0, 0, 0, 1)
 
-[node name="Settings" type="Control" unique_id=2136593017]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p8wc"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6d6q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wm04"]
+bg_color = Color(1, 0.83137256, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f4mfi"]
+
+[node name="Credits" type="Control" unique_id=2136593017]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_fl4st")
 
 [node name="Main Background" type="Panel" parent="." unique_id=1823947326]
 layout_mode = 1
@@ -18,10 +49,84 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -319.0
-offset_top = -178.0
-offset_right = 320.0
-offset_bottom = 183.0
+offset_left = -192.0
+offset_top = -109.0
+offset_right = 188.0
+offset_bottom = 92.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jwo76")
+
+[node name="Label" type="Label" parent="." unique_id=750522154]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_right = 76.5
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 50
+text = "CREDITS"
+
+[node name="Label2" type="Label" parent="." unique_id=325600979]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 59.0
+offset_right = 111.0
+offset_bottom = 82.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_6wm04")
+text = "Jake, Matthew, Jitian, Miro, Ronan, Spencer"
+
+[node name="Label3" type="Label" parent="." unique_id=1287770164]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 83.0
+offset_right = 174.0
+offset_bottom = 137.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+text = "Soundtrack:
+Grande Tarantelle (1872) - 
+L. M. Gottschalk."
+
+[node name="Label4" type="Label" parent="." unique_id=175280963]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 81.0
+offset_right = 358.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("2_6wm04")
+text = "Fonts:
+\"PixNull\" by NullOffset
+Monogram"
+
+[node name="Credits Button" type="Button" parent="." unique_id=2011433232]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -33.0
+offset_right = 17.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0.7921569, 1, 1)
+theme_override_fonts/font = ExtResource("2_6wm04")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p8wc")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r6d6q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6wm04")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_f4mfi")
+text = "Back"
+
+[connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]

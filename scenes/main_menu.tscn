@@ -8,6 +8,11 @@ bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7irk"]
 bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.83137256, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
 
@@ -84,19 +89,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_bxb6r")
 text = "Begin"
 
-[node name="Settings Button" type="Button" parent="VBoxContainer" unique_id=1753891763]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0.7921569, 1, 1)
-theme_override_fonts/font = ExtResource("2_ekxnf")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_v4udn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i3ulh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_bxb6r")
-text = "Settings"
-
 [node name="Credits Button" type="Button" parent="VBoxContainer" unique_id=949286003]
 layout_mode = 2
 size_flags_vertical = 3
@@ -146,6 +138,7 @@ offset_right = 51.0
 offset_bottom = -130.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 65
 text = "[Masquerade]"
 
@@ -179,9 +172,7 @@ offset_bottom = -86.37348
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_ekxnf")
 text = "Fall Zotjam 2026"
-text = "[Mask Game]"
 
 [connection signal="pressed" from="VBoxContainer/Begin Button" to="." method="_on_begin_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Credits Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="Exit Button" to="." method="_on_exit_button_pressed"]
